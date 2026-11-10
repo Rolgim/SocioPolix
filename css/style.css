@@ -177,7 +177,8 @@ nav a[aria-current="page"] { color: var(--ink); background: color-mix(in oklab, 
 .timeline li:last-child { padding-bottom: 0; }
 .timeline h3 { font-family: var(--sans); font-size: 1rem; line-height: 1.35; }
 .timeline p { color: var(--muted); font-size: 0.94rem; margin-top: 2px; }
-.timeline .tag { display: inline-block; margin-top: 6px; font-size: 0.8rem; text-decoration: none; padding: 1px 8px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--accent) 55%, var(--line)); color: color-mix(in oklab, var(--accent) 62%, var(--ink)); }
+.timeline .shared { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.8rem; }
+.timeline .tag { display: inline-block; font-size: 0.8rem; text-decoration: none; padding: 1px 8px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--accent) 55%, var(--line)); color: color-mix(in oklab, var(--accent) 62%, var(--ink)); }
 .timeline .tag:hover { background: color-mix(in oklab, var(--accent) 14%, transparent); }
 .century { font-family: var(--serif); font-size: 1.15rem; color: var(--muted); margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 

@@ -48,6 +48,21 @@
   const ROMAN = { 17: "XVIIe", 18: "XVIIIe", 19: "XIXe", 20: "XXe", 21: "XXIe" };
   const century = (y) => Math.floor((y - 1) / 100) + 1;
 
+  // Chronologie d'une idéologie : ses propres dates, plus celles d'autres fiches
+  // qui la citent en 4e élément. Chaque entrée garde la liste des idéologies liées.
+  function timelineOf(d) {
+    const out = [];
+    for (const o of DATA) {
+      for (const [y, t, x, aussi = []] of o.histoire) {
+        if (o === d || aussi.includes(d.id)) out.push({ y, t, x, ideos: [o, ...aussi.map((id) => byId[id])] });
+      }
+    }
+    return out.sort((a, b) => a.y - b.y);
+  }
+
+  const tagsHtml = (list) =>
+    list.map((o) => `<a class="tag" href="#/ideologie/${o.id}" style="--accent:${o.couleur}">${esc(o.nom)}</a>`).join(" ");
+
   /* ---------- Accueil ---------- */
 
   function viewHome() {
@@ -167,9 +182,13 @@
         <section id="s-histoire">
           <h2>Histoire</h2>
           <ol class="timeline">
-            ${d.histoire.map(([y, t, x]) => `
-              <li><span class="year">${y}</span>
-                <div class="body"><h3>${esc(t)}</h3><p>${esc(x)}</p></div></li>`).join("")}
+            ${timelineOf(d).map((e) => {
+              const others = e.ideos.filter((o) => o !== d);
+              return `
+              <li><span class="year">${e.y}</span>
+                <div class="body"><h3>${esc(e.t)}</h3><p>${esc(e.x)}</p>
+                ${others.length ? `<p class="shared">Aussi : ${tagsHtml(others)}</p>` : ""}</div></li>`;
+            }).join("")}
           </ol>
         </section>
 
@@ -254,7 +273,7 @@
 
   function viewFrise() {
     document.title = "Frise chronologique — SocioPolix";
-    const events = DATA.flatMap((d) => d.histoire.map(([y, t, x]) => ({ y, t, x, d }))).sort((a, b) => a.y - b.y);
+    const events = DATA.flatMap((d) => d.histoire.map(([y, t, x, aussi = []]) => ({ y, t, x, d, ideos: [d, ...aussi.map((id) => byId[id])] }))).sort((a, b) => a.y - b.y);
     const active = new Set();
 
     app.innerHTML = `
@@ -274,7 +293,7 @@
     const chips = document.getElementById("chips");
 
     function draw() {
-      const list = events.filter((e) => !active.size || active.has(e.d.id));
+      const list = events.filter((e) => !active.size || e.ideos.some((o) => active.has(o.id)));
       let html = "";
       let cur = null;
       for (const e of list) {
@@ -287,7 +306,7 @@
         html += `
           <li style="--accent:${e.d.couleur}"><span class="year" style="color:inherit">${e.y}</span>
             <div class="body"><h3>${esc(e.t)}</h3><p>${esc(e.x)}</p>
-            <a class="tag" href="#/ideologie/${e.d.id}">${esc(e.d.nom)}</a></div></li>`;
+            <p class="shared">${tagsHtml(e.ideos)}</p></div></li>`;
       }
       if (cur !== null) html += "</ol>";
       out.innerHTML = html;
@@ -332,7 +351,8 @@
       }
 
       // Événement → année (mauvaises réponses prises parmi les années proches)
-      for (const [y, t, x] of d.histoire) {
+      // (en quiz thématique, on inclut les dates partagées avec d'autres fiches)
+      for (const { y, t, x } of global ? d.histoire.map(([y, t, x]) => ({ y, t, x })) : timelineOf(d)) {
         const near = allYears.filter((v) => v !== y).sort((a, b) => Math.abs(a - y) - Math.abs(b - y)).slice(0, 8);
         const opts = [y, ...shuffle(near).slice(0, 3)].sort((a, b) => a - b).map(String);
         gen.push({ q: "En quelle année ?", ctx: t, options: opts, answer: String(y), e: `${y} — ${x}`, ideo: d.id });

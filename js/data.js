@@ -4,6 +4,9 @@
  * Pour ajouter une idéologie, copier un bloc et le remplir :
  *   idees    : [titre, explication]
  *   histoire : [année (nombre), titre court, explication]
+ *              + en option un 4e élément : ids d'autres idéologies concernées,
+ *              ex. [1789, "…", "…", ["republicanisme"]] — la date apparaît alors
+ *              aussi dans leurs fiches et porte plusieurs étiquettes dans la frise
  *   figures  : [nom, dates, description SANS citer le nom (sert aux quiz)]
  *   oeuvres  : [titre, auteur, année]
  *   courants : [nom, description]
@@ -31,11 +34,11 @@ window.IDEOLOGIES = [
     ],
     histoire: [
       [1689, "Bill of Rights anglais et « Deux traités du gouvernement civil » de Locke", "Après la Glorieuse Révolution, le Parlement limite le pouvoir royal ; Locke théorise le gouvernement par consentement."],
-      [1748, "Parution de « De l’esprit des lois »", "Montesquieu y défend la séparation des pouvoirs législatif, exécutif et judiciaire."],
+      [1748, "Parution de « De l’esprit des lois »", "Montesquieu y défend la séparation des pouvoirs législatif, exécutif et judiciaire ; il y fait aussi de la vertu civique le principe des républiques.", ["republicanisme"]],
       [1776, "Parution de « La Richesse des nations » et Déclaration d’indépendance américaine", "Adam Smith fonde l’économie politique libérale la même année que la naissance des États-Unis."],
-      [1789, "Déclaration des droits de l’homme et du citoyen", "La Révolution française proclame la liberté, l’égalité en droits et la souveraineté de la nation."],
+      [1789, "Déclaration des droits de l’homme et du citoyen", "Elle proclame les droits individuels et la séparation des pouvoirs, mais aussi la souveraineté de la nation et la loi comme « expression de la volonté générale ».", ["republicanisme"]],
       [1859, "Parution de « De la liberté » de John Stuart Mill", "Mill formule le principe de non-nuisance : on ne peut contraindre un individu que pour empêcher un tort fait à autrui."],
-      [1947, "Fondation de la Société du Mont-Pèlerin", "Autour de Hayek, des intellectuels relancent le libéralisme face au planisme : c’est l’une des sources du néolibéralisme."],
+      [1947, "Fondation de la Société du Mont-Pèlerin", "Autour de Hayek, des intellectuels relancent le libéralisme face au planisme : c’est l’une des sources du néolibéralisme.", ["libertarianisme"]],
       [1971, "Parution de « Théorie de la justice » de John Rawls", "Rawls renouvelle le libéralisme en y intégrant une exigence forte de justice sociale."]
     ],
     figures: [
@@ -120,7 +123,7 @@ window.IDEOLOGIES = [
       [1818, "Chateaubriand fonde le journal « Le Conservateur »", "Le mot entre dans le vocabulaire politique."],
       [1874, "Second gouvernement Disraeli au Royaume-Uni", "Il met en œuvre un conservatisme social (« one-nation ») soucieux de la condition ouvrière."],
       [1953, "Parution de « The Conservative Mind » de Russell Kirk", "L’ouvrage donne une généalogie intellectuelle au conservatisme américain d’après-guerre."],
-      [1979, "Margaret Thatcher devient Première ministre", "Avec Ronald Reagan (élu en 1980), elle incarne l’alliance du conservatisme et du libéralisme économique."]
+      [1979, "Margaret Thatcher devient Première ministre", "Avec Ronald Reagan (élu en 1980), elle incarne l’alliance du conservatisme et du libéralisme économique.", ["liberalisme"]]
     ],
     figures: [
       ["Edmund Burke", "1729-1797", "Député et penseur irlando-britannique, critique de la Révolution française et père du conservatisme moderne."],
@@ -198,10 +201,10 @@ window.IDEOLOGIES = [
     histoire: [
       [1800, "Robert Owen prend la direction de la filature de New Lanark", "Il y expérimente une organisation plus humaine du travail : journée réduite, école, logements."],
       [1839, "Parution de « Organisation du travail » de Louis Blanc", "Il y propose des « ateliers sociaux » soutenus par l’État."],
-      [1864, "Fondation de la Première Internationale à Londres", "L’Association internationale des travailleurs réunit socialistes, syndicalistes et anarchistes."],
-      [1889, "Fondation de la Deuxième Internationale à Paris", "Elle fédère les partis socialistes et fait du 1er mai une journée de revendication."],
+      [1864, "Fondation de la Première Internationale à Londres", "L’Association internationale des travailleurs réunit socialistes, syndicalistes et anarchistes.", ["communisme", "anarchisme"]],
+      [1889, "Fondation de la Deuxième Internationale à Paris", "Elle fédère les partis socialistes et fait du 1er mai une journée de revendication.", ["social-democratie"]],
       [1905, "Création de la SFIO", "Les socialistes français s’unifient sous l’impulsion de Jean Jaurès et Jules Guesde."],
-      [1920, "Congrès de Tours", "La majorité rejoint l’Internationale communiste et fonde le futur PCF ; Léon Blum garde la « vieille maison » socialiste."],
+      [1920, "Congrès de Tours", "La majorité rejoint l’Internationale communiste et fonde le futur PCF ; Léon Blum garde la « vieille maison » socialiste.", ["communisme"]],
       [1936, "Victoire du Front populaire en France", "Le gouvernement Blum instaure les congés payés et la semaine de 40 heures."],
       [1981, "François Mitterrand est élu président de la République", "Premier président socialiste de la Ve République : nationalisations, retraite à 60 ans, abolition de la peine de mort."]
     ],
@@ -280,7 +283,7 @@ window.IDEOLOGIES = [
     histoire: [
       [1848, "Parution du « Manifeste du parti communiste »", "Marx et Engels y appellent les prolétaires de tous les pays à s’unir."],
       [1867, "Parution du livre I du « Capital »", "Marx y analyse le fonctionnement du capitalisme et l’exploitation du travail."],
-      [1871, "Commune de Paris", "Pendant 72 jours, Paris insurgé expérimente un gouvernement ouvrier ; Marx y voit un modèle."],
+      [1871, "Commune de Paris", "Pendant 72 jours, Paris insurgé expérimente un gouvernement populaire ; marxistes et anarchistes y verront chacun leur modèle.", ["anarchisme", "socialisme"]],
       [1917, "Révolution d’Octobre en Russie", "Les bolcheviks de Lénine prennent le pouvoir à Petrograd."],
       [1922, "Création de l’URSS", "Premier État se réclamant du communisme, bientôt dominé par Staline."],
       [1949, "Proclamation de la République populaire de Chine", "Les communistes de Mao Zedong l’emportent au terme de la guerre civile."],
@@ -363,7 +366,7 @@ window.IDEOLOGIES = [
     ],
     histoire: [
       [1840, "Parution de « Qu’est-ce que la propriété ? »", "Proudhon y répond : « c’est le vol » et se déclare anarchiste, donnant au mot un sens positif."],
-      [1872, "Congrès de La Haye : rupture entre Marx et Bakounine", "Les anarchistes sont exclus de la Première Internationale et fondent leur propre organisation à Saint-Imier."],
+      [1872, "Congrès de La Haye : rupture entre Marx et Bakounine", "Les anarchistes sont exclus de la Première Internationale et fondent leur propre organisation à Saint-Imier.", ["communisme"]],
       [1892, "Parution de « La Conquête du pain »", "Kropotkine y expose le communisme libertaire."],
       [1906, "Charte d’Amiens", "La CGT affirme l’indépendance du syndicalisme vis-à-vis des partis, sous l’influence des anarcho-syndicalistes."],
       [1910, "Fondation de la CNT en Espagne", "La confédération anarcho-syndicaliste devient une organisation de masse."],
@@ -609,8 +612,8 @@ window.IDEOLOGIES = [
       [1882, "Conférence de Renan « Qu’est-ce qu’une nation ? »", "Il définit la nation comme un « plébiscite de tous les jours », fondé sur la volonté et non sur la race."],
       [1899, "Charles Maurras rejoint l’Action française", "Il en fait le foyer du « nationalisme intégral », monarchiste et antisémite."],
       [1918, "Quatorze points du président Wilson", "Le droit des peuples à disposer d’eux-mêmes devient un principe de la paix d’après-guerre."],
-      [1947, "Indépendance de l’Inde", "Le mouvement national mené par Gandhi et Nehru met fin à la domination britannique."],
-      [1960, "« Année de l’Afrique »", "Dix-sept pays africains accèdent à l’indépendance."]
+      [1947, "Indépendance de l’Inde", "Le mouvement national mené par Gandhi et Nehru met fin à la domination britannique.", ["anticolonialisme"]],
+      [1960, "« Année de l’Afrique »", "Dix-sept pays africains accèdent à l’indépendance.", ["anticolonialisme"]]
     ],
     figures: [
       ["Johann Gottfried Herder", "1744-1803", "Philosophe allemand pour qui chaque peuple possède un génie propre exprimé par sa langue."],
@@ -861,7 +864,7 @@ window.IDEOLOGIES = [
     ],
     histoire: [
       [1850, "Parution de « La Loi » de Frédéric Bastiat", "Ce pamphlet contre la « spoliation légale » deviendra une référence des libertariens."],
-      [1949, "Parution de « L’Action humaine »", "Ludwig von Mises y expose l’économie de l’école autrichienne."],
+      [1949, "Parution de « L’Action humaine »", "Ludwig von Mises y expose l’économie de l’école autrichienne.", ["liberalisme"]],
       [1957, "Parution de « La Grève » (Atlas Shrugged)", "Le roman d’Ayn Rand exalte l’individu créateur face à l’État."],
       [1971, "Fondation du Parti libertarien aux États-Unis", "Il devient le troisième parti du pays par le nombre de voix, loin derrière les deux grands."],
       [1974, "Parution de « Anarchie, État et utopie »", "Robert Nozick y défend l’État minimal contre la justice redistributive de Rawls."],
@@ -1023,7 +1026,7 @@ window.IDEOLOGIES = [
     histoire: [
       [1762, "Parution de « Du contrat social »", "Rousseau y fonde l’autorité politique sur la volonté générale du peuple souverain."],
       [1792, "Proclamation de la Première République", "La monarchie est abolie en France le 21 septembre."],
-      [1848, "Deuxième République", "Elle instaure le suffrage universel masculin et abolit l’esclavage dans les colonies."],
+      [1848, "Deuxième République", "Elle instaure le suffrage universel masculin, abolit l’esclavage dans les colonies et tente, avec les ateliers nationaux, de garantir le droit au travail réclamé par les socialistes.", ["socialisme"]],
       [1870, "Proclamation de la Troisième République", "Après la défaite de Sedan, la république s’installe pour soixante-dix ans."],
       [1882, "Lois Ferry sur l’école", "L’enseignement primaire devient gratuit, obligatoire et laïc."],
       [1905, "Loi de séparation des Églises et de l’État", "La République « ne reconnaît, ne salarie ni ne subventionne aucun culte »."],
@@ -1108,7 +1111,7 @@ window.IDEOLOGIES = [
       [1892, "Fondation du Parti populiste américain", "Le People’s Party défend les fermiers endettés contre les banques et les compagnies de chemin de fer."],
       [1946, "Juan Perón est élu président de l’Argentine", "Il s’appuie sur les ouvriers et les syndicats, les « sans-chemise »."],
       [1956, "Percée électorale du poujadisme", "Le mouvement des petits commerçants en révolte contre l’impôt fait élire 52 députés."],
-      [1998, "Hugo Chávez est élu président du Venezuela", "Il lance la « révolution bolivarienne » au nom des pauvres contre l’oligarchie."],
+      [1998, "Hugo Chávez est élu président du Venezuela", "Il lance la « révolution bolivarienne » au nom des pauvres contre l’oligarchie.", ["socialisme"]],
       [2005, "Parution de « La Raison populiste »", "Ernesto Laclau y réhabilite le populisme comme logique normale de la politique."],
       [2016, "Vote du Brexit et élection de Donald Trump", "Deux victoires attribuées à la révolte des électeurs contre les élites établies."]
     ],
@@ -1275,7 +1278,7 @@ window.IDEOLOGIES = [
       [1954, "Bataille de Diên Biên Phu", "La défaite française en Indochine montre qu’une armée coloniale peut être vaincue."],
       [1955, "Conférence de Bandung", "Vingt-neuf pays d’Asie et d’Afrique affirment leur refus du colonialisme et de l’alignement sur un bloc."],
       [1957, "Indépendance du Ghana", "Premier pays d’Afrique subsaharienne à se libérer de la tutelle coloniale."],
-      [1962, "Indépendance de l’Algérie", "Elle met fin à huit ans de guerre et à cent trente-deux ans de présence française."],
+      [1962, "Indépendance de l’Algérie", "Elle met fin à huit ans de guerre et à cent trente-deux ans de présence française.", ["nationalisme"]],
       [1994, "Fin de l’apartheid", "Nelson Mandela est élu président de l’Afrique du Sud lors des premières élections ouvertes à tous."]
     ],
     exemples: [

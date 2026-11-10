@@ -34,6 +34,8 @@ Les quiz combinent :
 - les questions écrites à la main dans le champ `quiz` (la **première** réponse de `r` est la bonne, l'ordre est mélangé à l'affichage) ;
 - des questions générées automatiquement à partir des dates, des œuvres, des figures, des courants et des partis.
 
+Une date qui concerne plusieurs idéologies (la Déclaration de 1789, la Commune de Paris…) s'écrit une seule fois, dans une fiche, avec la liste des autres en quatrième élément : elle apparaît alors dans toutes les fiches concernées et porte plusieurs étiquettes dans la frise.
+
 Deux règles pour que les questions générées restent justes :
 
 - la description d'une figure ne doit pas contenir son nom ;
