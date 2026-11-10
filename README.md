@@ -1,6 +1,6 @@
 # SocioPolix
 
-Un atlas des idéologies politiques : idées clés, histoire, figures, œuvres, courants et critiques, avec des quiz pour apprendre.
+Un atlas des idéologies politiques : idées clés, histoire, exemples historiques, figures, œuvres, courants, partis proches (hier et aujourd'hui) et critiques, avec des quiz pour apprendre.
 
 Site statique sans dépendance ni étape de build. Il s'installe sur téléphone (ou sur ordinateur) comme une application et fonctionne hors ligne.
 
@@ -32,7 +32,7 @@ Tout se passe dans `js/data.js`. Le format de chaque champ est décrit en tête 
 Les quiz combinent :
 
 - les questions écrites à la main dans le champ `quiz` (la **première** réponse de `r` est la bonne, l'ordre est mélangé à l'affichage) ;
-- des questions générées automatiquement à partir des dates, des œuvres, des figures et des courants.
+- des questions générées automatiquement à partir des dates, des œuvres, des figures, des courants et des partis.
 
 Deux règles pour que les questions générées restent justes :
 

@@ -90,6 +90,8 @@
         ...d.figures.map((f) => f[0]),
         ...d.oeuvres.map((o) => `${o[0]} (${o[1]})`),
         ...d.courants.map((c) => c[0]),
+        ...d.exemples.map((x) => `${x[1]} (${x[2]})`),
+        ...[...d.partis.hier, ...d.partis.aujourdhui].map((x) => `${x[0]} (${x[1]})`),
         ...d.idees.map((i) => i[0]),
       ],
     }));
@@ -132,9 +134,11 @@
     const sections = [
       ["idees", "Idées clés"],
       ["histoire", "Histoire"],
+      ["exemples", "Exemples historiques"],
       ["figures", "Figures"],
       ["oeuvres", "Œuvres"],
       ["courants", "Courants"],
+      ["partis", "Partis et mouvements"],
       ["critiques", "Critiques et débats"],
     ];
 
@@ -169,6 +173,18 @@
           </ol>
         </section>
 
+        <section id="s-exemples">
+          <h2>Exemples historiques</h2>
+          <p class="section-intro">Des moments où ces idées ont été mises en pratique, entièrement ou en partie.</p>
+          <div class="cases">
+            ${d.exemples.map(([when, t, where, x]) => `
+              <div class="case">
+                <p class="meta"><span>${esc(when)}</span><span>${esc(where)}</span></p>
+                <h3>${esc(t)}</h3><p>${esc(x)}</p>
+              </div>`).join("")}
+          </div>
+        </section>
+
         <section id="s-figures">
           <h2>Figures</h2>
           <div class="people">
@@ -193,6 +209,22 @@
           <dl class="defs">
             ${d.courants.map(([n, x]) => `<div><dt>${esc(n)}</dt><dd>${esc(x)}</dd></div>`).join("")}
           </dl>
+        </section>
+
+        <section id="s-partis">
+          <h2>Partis et mouvements</h2>
+          <p class="section-intro">${esc(d.partis.note || "Les formations les plus proches de ces idées, hier et aujourd’hui.")}</p>
+          <div class="parties">
+            ${[["Hier", d.partis.hier], ["Aujourd’hui", d.partis.aujourdhui]].map(([label, list]) => `
+              <div>
+                <h3 class="parties-head">${label}</h3>
+                <ul>
+                  ${list.map(([n, where, when, x]) => `
+                    <li><b>${esc(n)}</b><span class="meta"><span>${esc(where)}</span><span>${esc(when)}</span></span><p>${esc(x)}</p></li>`).join("")}
+                </ul>
+              </div>`).join("")}
+          </div>
+          <p class="fineprint">Rattacher un parti à une idéologie est toujours une simplification : les partis évoluent et mêlent plusieurs influences. Situation à la mi-2026.</p>
         </section>
 
         <section id="s-critiques">
@@ -318,6 +350,10 @@
         // Figure → idéologie
         for (const [n, dates, role] of d.figures) {
           gen.push({ q: `À quelle idéologie associe-t-on principalement ${n} ?`, options: shuffle([d.nom, ...shuffle(others).slice(0, 3)]), answer: d.nom, e: `${n} (${dates}). ${role}`, ideo: d.id });
+        }
+        // Parti ou mouvement → idéologie
+        for (const [n, where, when, x] of [...d.partis.hier, ...d.partis.aujourdhui]) {
+          gen.push({ q: "De quelle idéologie ce parti ou mouvement est-il le plus proche ?", ctx: `${n} (${where}, ${when})`, options: shuffle([d.nom, ...shuffle(others).slice(0, 3)]), answer: d.nom, e: `${n} : ${x}`, ideo: d.id });
         }
         // Courant → idéologie
         for (const [n, x] of d.courants) {

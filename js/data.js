@@ -7,9 +7,12 @@
  *   figures  : [nom, dates, description SANS citer le nom (sert aux quiz)]
  *   oeuvres  : [titre, auteur, année]
  *   courants : [nom, description]
+ *   exemples : [période, titre, lieu, explication] — mises en pratique historiques
+ *   partis   : { note (facultatif), hier: [...], aujourdhui: [...] }
+ *              chaque parti : [nom, pays, période, description]
  *   proches  : ids d'idéologies voisines (jamais proposées comme mauvaises réponses)
  *   quiz     : { q: question, r: [bonne réponse, 3 mauvaises], e: explication }
- * Les quiz sur les dates, les auteurs et les figures sont générés automatiquement.
+ * Les quiz sur les dates, les auteurs, les figures et les partis sont générés automatiquement.
  */
 window.IDEOLOGIES = [
   {
@@ -65,6 +68,25 @@ window.IDEOLOGIES = [
       "Les conservateurs et les communautariens l’accusent de dissoudre les liens sociaux dans l’individualisme.",
       "Les politiques néolibérales sont critiquées pour le creusement des inégalités et l’instabilité financière."
     ],
+    exemples: [
+      ["À partir de 1689", "La monarchie parlementaire britannique", "Royaume-Uni", "Après la Glorieuse Révolution, le roi gouverne sous le contrôle du Parlement : c’est le premier régime durable de pouvoir limité."],
+      ["1787-1791", "La Constitution américaine et sa Déclaration des droits", "États-Unis", "Séparation des pouvoirs, fédéralisme et libertés garanties par écrit : une application directe de Locke et de Montesquieu."],
+      ["1846", "L’abrogation des Corn Laws", "Royaume-Uni", "En supprimant les droits de douane sur les céréales, le pays bascule dans le libre-échange."],
+      ["À partir de 1975", "Les réformes des « Chicago Boys »", "Chili", "Privatisations et ouverture des marchés menées sous la dictature de Pinochet : un cas souvent cité pour montrer que libéralisme économique et libertés politiques ne vont pas toujours ensemble."]
+    ],
+    partis: {
+      hier: [
+        ["Parti libéral", "Royaume-Uni", "1859-1988", "Grand parti de gouvernement du XIXe siècle (Gladstone), supplanté par les travaillistes après 1918."],
+        ["Parti national-libéral", "Allemagne", "1867-1918", "Parti de la bourgeoisie libérale, allié de Bismarck pour l’unification."],
+        ["Parti radical", "France", "fondé en 1901", "Pilier de la IIIe République : laïcité, libertés publiques, défense de la petite propriété."]
+      ],
+      aujourdhui: [
+        ["FDP", "Allemagne", "depuis 1948", "Parti libéral-démocrate, attaché au marché et aux libertés civiles."],
+        ["Libéraux-démocrates", "Royaume-Uni", "depuis 1988", "Héritiers du Parti libéral, d’orientation sociale-libérale."],
+        ["VVD", "Pays-Bas", "depuis 1948", "Libéralisme de centre droit, longtemps premier parti du pays."],
+        ["Renaissance", "France", "depuis 2016", "Parti centriste d’Emmanuel Macron, libéral en économie et pro-européen."]
+      ]
+    },
     proches: ["libertarianisme", "social-democratie"],
     quiz: [
       { q: "Quel principe Montesquieu défend-il pour empêcher les abus de pouvoir ?", r: ["La séparation des pouvoirs", "La dictature du prolétariat", "Le droit divin des rois", "La démocratie directe permanente"], e: "Dans « De l’esprit des lois » (1748), Montesquieu soutient qu’il faut que « le pouvoir arrête le pouvoir »." },
@@ -125,6 +147,25 @@ window.IDEOLOGIES = [
       "Il serait défini par ce qu’il refuse plus que par un projet : ce qu’il conserve change selon les époques et les pays.",
       "L’alliance avec le libéralisme économique est jugée contradictoire, le marché bouleversant les traditions qu’il veut protéger."
     ],
+    exemples: [
+      ["1815-1848", "L’Europe de Metternich", "Autriche et Europe", "Le chancelier autrichien organise l’entente des monarchies pour étouffer les mouvements libéraux et nationaux."],
+      ["1814-1830", "La Restauration", "France", "Les Bourbons reviennent sur le trône ; les « ultras » veulent effacer l’héritage révolutionnaire."],
+      ["1874-1880", "Le gouvernement Disraeli", "Royaume-Uni", "Lois sur la santé publique, le logement ouvrier et les syndicats : le conservatisme réformateur en actes."],
+      ["Années 1980", "La « révolution conservatrice » de Thatcher et Reagan", "Royaume-Uni, États-Unis", "Baisse des impôts, privatisations, fermeté face aux syndicats et à l’URSS, discours sur les valeurs traditionnelles."]
+    ],
+    partis: {
+      hier: [
+        ["Tories", "Royaume-Uni", "fin du XVIIe siècle-1834", "Parti du roi et de l’Église anglicane, ancêtre du Parti conservateur."],
+        ["Parti de l’Ordre", "France", "1848-1852", "Coalition de monarchistes et de notables après la révolution de 1848 (Thiers, Falloux)."],
+        ["Parti conservateur allemand", "Allemagne", "1876-1918", "Parti de l’aristocratie prussienne et des grands propriétaires."]
+      ],
+      aujourdhui: [
+        ["Parti conservateur", "Royaume-Uni", "depuis 1834", "L’un des plus anciens partis du monde encore en activité."],
+        ["Les Républicains", "France", "depuis 2015", "Principal parti de la droite de gouvernement, héritier du RPR et de l’UMP."],
+        ["Parti républicain", "États-Unis", "depuis 1854", "Devenu le grand parti conservateur américain dans la seconde moitié du XXe siècle."],
+        ["Droit et justice (PiS)", "Pologne", "depuis 2001", "National-conservateur, proche de l’Église catholique."]
+      ]
+    },
     proches: ["democratie-chretienne", "nationalisme", "liberalisme"],
     quiz: [
       { q: "En réaction à quel événement le conservatisme moderne se constitue-t-il ?", r: ["La Révolution française", "La révolution d’Octobre", "La Réforme protestante", "La Première Guerre mondiale"], e: "Les « Réflexions » de Burke (1790) répondent directement aux événements de 1789." },
@@ -185,6 +226,25 @@ window.IDEOLOGIES = [
       "Les communistes ont accusé les socialistes réformistes de s’accommoder du capitalisme.",
       "Au pouvoir, les partis socialistes ont souvent été critiqués par leur base pour leurs compromis avec l’économie de marché."
     ],
+    exemples: [
+      ["1859-1968", "Le Familistère de Guise", "France", "L’industriel Jean-Baptiste Godin, disciple de Fourier, loge ses ouvriers dans un « palais social » et leur transmet l’entreprise sous forme de coopérative."],
+      ["À partir de 1909", "Les kibboutz", "Palestine puis Israël", "Des communautés agricoles où la propriété, le travail et l’éducation des enfants sont mis en commun."],
+      ["1936-1938", "Le Front populaire", "France", "Congés payés, semaine de 40 heures, conventions collectives : des conquêtes sociales durables obtenues en quelques semaines."],
+      ["1981-1983", "Les débuts de la présidence Mitterrand", "France", "Nationalisations, retraite à 60 ans, cinquième semaine de congés ; dès 1983, le « tournant de la rigueur » marque les limites de l’expérience."]
+    ],
+    partis: {
+      hier: [
+        ["SFIO", "France", "1905-1969", "Section française de l’Internationale ouvrière, le parti de Jaurès puis de Blum."],
+        ["Parti socialiste italien", "Italie", "1892-1994", "L’un des plus anciens partis ouvriers d’Europe, emporté par les scandales de corruption."],
+        ["Parti socialiste unifié (PSU)", "France", "1960-1989", "Laboratoire d’idées de la gauche autogestionnaire."]
+      ],
+      aujourdhui: [
+        ["Parti socialiste", "France", "depuis 1969", "Héritier de la SFIO ; son action au pouvoir relève largement de la social-démocratie."],
+        ["La France insoumise", "France", "depuis 2016", "Gauche radicale se réclamant du socialisme démocratique et de l’écologie."],
+        ["Die Linke", "Allemagne", "depuis 2007", "Parti de la gauche radicale, issu en partie de l’ancien parti dirigeant de la RDA."],
+        ["Parti des travailleurs (PT)", "Brésil", "depuis 1980", "Né du syndicalisme ouvrier, parti du président Lula."]
+      ]
+    },
     proches: ["communisme", "social-democratie", "anarchisme"],
     quiz: [
       { q: "Dans quel contexte le socialisme apparaît-il ?", r: ["La révolution industrielle et la misère ouvrière", "Les guerres de Religion", "La décolonisation", "La crise pétrolière de 1973"], e: "Les premiers socialistes réagissent aux conditions de vie des ouvriers dans l’Europe industrielle du début du XIXe siècle." },
@@ -246,6 +306,25 @@ window.IDEOLOGIES = [
       "Les libéraux, comme Hayek, soutiennent que la planification centrale ne peut ni coordonner l’économie ni coexister avec la liberté.",
       "Anarchistes et socialistes démocratiques ont critiqué très tôt la confiscation du pouvoir par le parti."
     ],
+    exemples: [
+      ["1922-1991", "L’Union soviétique", "URSS", "Économie entièrement planifiée, parti unique, industrialisation à marche forcée ; le stalinisme y ajoute la terreur de masse et le Goulag."],
+      ["1949-1976", "La Chine de Mao", "Chine", "Collectivisation des terres, Grand Bond en avant (qui provoque une famine de plusieurs dizaines de millions de morts), puis Révolution culturelle."],
+      ["Depuis 1959", "Cuba après la révolution", "Cuba", "Régime de parti unique, économie étatisée, système de santé et d’éducation gratuit, libertés politiques absentes."],
+      ["1975-1979", "Le Kampuchéa démocratique", "Cambodge", "Les Khmers rouges vident les villes et abolissent la monnaie ; près d’un quart de la population périt."]
+    ],
+    partis: {
+      hier: [
+        ["Ligue des communistes", "Europe", "1847-1852", "L’organisation pour laquelle Marx et Engels rédigent le Manifeste."],
+        ["Parti communiste de l’Union soviétique", "URSS", "1912-1991", "Issu des bolcheviks, parti unique de l’URSS."],
+        ["Parti communiste italien", "Italie", "1921-1991", "Le plus puissant d’Europe de l’Ouest, figure de proue de l’eurocommunisme."]
+      ],
+      aujourdhui: [
+        ["Parti communiste français", "France", "depuis 1920", "Né du congrès de Tours, premier parti de France à la Libération, aujourd’hui très affaibli."],
+        ["Parti communiste chinois", "Chine", "depuis 1921", "Au pouvoir depuis 1949 ; il dirige désormais une économie largement ouverte au marché."],
+        ["Parti communiste de Grèce (KKE)", "Grèce", "depuis 1918", "Resté fidèle au marxisme-léninisme."],
+        ["Lutte ouvrière", "France", "depuis 1968", "Organisation trotskiste."]
+      ]
+    },
     proches: ["socialisme", "anarchisme", "social-democratie"],
     quiz: [
       { q: "Selon Marx, quel est le moteur de l’histoire ?", r: ["La lutte des classes", "Le progrès des idées", "La volonté des grands hommes", "La concurrence entre nations"], e: "Le « Manifeste » s’ouvre sur cette thèse : l’histoire de toute société jusqu’à nos jours est l’histoire de luttes de classes." },
@@ -305,6 +384,26 @@ window.IDEOLOGIES = [
       "Les marxistes lui reprochent de désarmer la révolution en refusant de prendre le pouvoir.",
       "La « propagande par le fait » (attentats des années 1890) a durablement associé l’anarchisme à la violence."
     ],
+    exemples: [
+      ["1918-1921", "Le territoire libre d’Ukraine", "Ukraine", "Sous la protection de l’armée de Makhno, des communes paysannes et des soviets libres s’organisent sans parti dirigeant."],
+      ["1936-1939", "Les collectivisations de Catalogne et d’Aragon", "Espagne", "Usines, transports et terres sont gérés par les travailleurs eux-mêmes ; l’expérience est brisée par la guerre et par les rivalités au sein du camp républicain."],
+      ["Depuis 1994", "Les communes zapatistes du Chiapas", "Mexique", "Sans se dire anarchistes, les zapatistes pratiquent l’autogouvernement et les mandats révocables : « commander en obéissant »."],
+      ["À partir de 2012", "L’administration autonome du Rojava", "Nord de la Syrie", "Le mouvement kurde y applique un « confédéralisme démocratique » inspiré de Murray Bookchin : assemblées locales et parité."]
+    ],
+    partis: {
+      note: "Les anarchistes refusent par principe de former des partis et de briguer le pouvoir : ils s’organisent en fédérations, syndicats et collectifs.",
+      hier: [
+        ["Fédération jurassienne", "Suisse", "1871-1880", "Organisation des horlogers du Jura, cœur de l’Internationale « antiautoritaire »."],
+        ["CNT-FAI", "Espagne", "années 1930", "Syndicat anarcho-syndicaliste et fédération anarchiste, forts de plus d’un million de membres en 1936."],
+        ["Parti libéral mexicain", "Mexique", "1905-1918", "Malgré son nom, le mouvement libertaire des frères Flores Magón pendant la révolution mexicaine."]
+      ],
+      aujourdhui: [
+        ["Fédération anarchiste", "France", "depuis 1945", "Elle édite le journal « Le Monde libertaire »."],
+        ["CNT", "Espagne", "depuis 1910", "Syndicat anarcho-syndicaliste, aujourd’hui minoritaire."],
+        ["Industrial Workers of the World (IWW)", "États-Unis", "depuis 1905", "Syndicat révolutionnaire prônant « un seul grand syndicat »."],
+        ["Union communiste libertaire", "France", "depuis 2019", "Organisation communiste libertaire."]
+      ]
+    },
     proches: ["socialisme", "communisme", "libertarianisme"],
     quiz: [
       { q: "Quelle réponse célèbre Proudhon donne-t-il à la question « Qu’est-ce que la propriété ? »", r: ["C’est le vol", "C’est la liberté", "C’est un droit sacré", "C’est le fruit du travail"], e: "Proudhon vise la propriété qui permet de vivre du travail d’autrui, non la possession personnelle." },
@@ -362,6 +461,25 @@ window.IDEOLOGIES = [
       "Les libéraux critiquent le poids des impôts et de la dépense publique.",
       "La « troisième voie » est accusée d’avoir éloigné ces partis de leur électorat populaire."
     ],
+    exemples: [
+      ["1919-1934", "« Vienne la Rouge »", "Autriche", "La municipalité sociale-démocrate bâtit des dizaines de milliers de logements sociaux, des dispensaires et des écoles."],
+      ["1932-1976", "Le « foyer du peuple » suédois", "Suède", "Quarante-quatre ans de gouvernement social-démocrate : protection sociale universelle, plein emploi, faibles inégalités."],
+      ["1945-1951", "Le gouvernement Attlee", "Royaume-Uni", "Service national de santé, assurances sociales, nationalisation du charbon, du rail et de l’énergie."],
+      ["1969-1982", "Les chanceliers Brandt et Schmidt", "Allemagne de l’Ouest", "Extension de l’État social et de la cogestion, qui donne aux salariés des sièges dans les conseils des grandes entreprises."]
+    ],
+    partis: {
+      hier: [
+        ["Parti ouvrier social-démocrate d’Autriche", "Autriche", "1889-1934", "Le parti de « Vienne la Rouge », interdit par la dictature de Dollfuss."],
+        ["Parti social-démocrate (SDP)", "Royaume-Uni", "1981-1988", "Scission modérée du Parti travailliste."],
+        ["SPD de la république de Weimar", "Allemagne", "1919-1933", "Principal soutien de la première démocratie allemande, interdit par les nazis."]
+      ],
+      aujourdhui: [
+        ["SPD", "Allemagne", "depuis 1875", "Le plus ancien parti d’Allemagne."],
+        ["Parti social-démocrate suédois (SAP)", "Suède", "depuis 1889", "Architecte du modèle suédois."],
+        ["Parti travailliste", "Royaume-Uni", "depuis 1900", "Né des syndicats britanniques."],
+        ["PSOE", "Espagne", "depuis 1879", "« Socialiste » de nom, social-démocrate dans sa pratique de gouvernement."]
+      ]
+    },
     proches: ["socialisme", "communisme", "liberalisme"],
     quiz: [
       { q: "Qu’est-ce qui distingue la social-démocratie du communisme ?", r: ["Elle choisit la réforme démocratique plutôt que la révolution", "Elle refuse toute intervention de l’État", "Elle rejette les syndicats", "Elle défend le parti unique"], e: "La social-démocratie veut transformer la société par les élections, la loi et la négociation." },
@@ -419,6 +537,26 @@ window.IDEOLOGIES = [
       "Les historiens débattent de sa définition : pour certains (Paxton), il se reconnaît à ses actes plus qu’à sa doctrine ; d’autres discutent de l’extension du terme à des régimes autoritaires comme celui de Franco.",
       "L’usage du mot comme simple insulte politique tend à en brouiller le sens historique."
     ],
+    exemples: [
+      ["1922-1943", "L’Italie fasciste", "Italie", "Parti unique, police politique, encadrement de la jeunesse, conquête de l’Éthiopie, lois antisémites de 1938."],
+      ["1933-1945", "Le Troisième Reich", "Allemagne", "La dictature nazie déclenche la guerre en Europe et organise l’extermination de six millions de Juifs."],
+      ["1941-1945", "L’État indépendant de Croatie", "Croatie", "Le régime des Oustachis, satellite de l’Axe, massacre Serbes, Juifs et Roms."],
+      ["1943-1945", "La République de Salò", "Nord de l’Italie", "État fantoche dirigé par Mussolini sous protection allemande."]
+    ],
+    partis: {
+      note: "Qualifier de « fascistes » des partis actuels fait débat : la plupart des historiens réservent le terme aux mouvements qui s’en réclament et classent les droites radicales d’aujourd’hui dans d’autres catégories (national-populisme, extrême droite).",
+      hier: [
+        ["Parti national fasciste", "Italie", "1921-1943", "Le parti de Mussolini."],
+        ["NSDAP (parti nazi)", "Allemagne", "1920-1945", "Le parti d’Hitler, parti unique à partir de 1933."],
+        ["Garde de fer", "Roumanie", "1927-1941", "Mouvement fasciste mystique et violemment antisémite."],
+        ["Mouvement social italien (MSI)", "Italie", "1946-1995", "Parti néofasciste fondé par d’anciens cadres de la République de Salò."]
+      ],
+      aujourdhui: [
+        ["CasaPound", "Italie", "depuis 2003", "Mouvement dont les membres se disent « fascistes du troisième millénaire »."],
+        ["Forza Nuova", "Italie", "depuis 1997", "Groupuscule néofasciste."],
+        ["Aube dorée", "Grèce", "fondée en 1985", "Parti néonazi dont les dirigeants ont été condamnés en 2020 pour direction d’une organisation criminelle."]
+      ]
+    },
     proches: ["nationalisme", "conservatisme"],
     quiz: [
       { q: "Dans quel pays et à quelle période le fascisme naît-il ?", r: ["En Italie, après la Première Guerre mondiale", "En Allemagne, après 1870", "En Espagne, pendant la guerre civile", "En France, pendant l’affaire Dreyfus"], e: "Mussolini fonde les Faisceaux de combat à Milan en 1919 et prend le pouvoir en 1922." },
@@ -480,6 +618,26 @@ window.IDEOLOGIES = [
       "Des historiens (Anderson, Gellner, Hobsbawm) soulignent que les nations sont des constructions récentes et non des réalités éternelles.",
       "Internationalistes et fédéralistes lui reprochent de faire obstacle à la coopération entre les peuples."
     ],
+    exemples: [
+      ["1859-1871", "Les unifications italienne et allemande", "Italie, Allemagne", "Par la diplomatie et la guerre, des dizaines d’États deviennent deux nations ; l’Empire allemand est proclamé à Versailles en 1871."],
+      ["À partir de 1923", "La Turquie de Mustafa Kemal", "Turquie", "Sur les ruines de l’Empire ottoman, un État-nation laïc et centralisé, au prix de la négation des minorités."],
+      ["1947-1962", "Les indépendances", "Inde, Algérie et autres", "Les mouvements nationaux mettent fin aux empires coloniaux, par la négociation ou par la guerre."],
+      ["Années 1990", "L’éclatement de la Yougoslavie", "Balkans", "Les nationalismes serbe, croate et autres mènent à la guerre et au « nettoyage ethnique »."]
+    ],
+    partis: {
+      note: "Le nationalisme se combine avec des orientations très différentes, de la gauche indépendantiste à l’extrême droite.",
+      hier: [
+        ["Action française", "France", "fondée en 1899", "Mouvement monarchiste du « nationalisme intégral »."],
+        ["Congrès national indien", "Inde", "fondé en 1885", "Le parti de l’indépendance, autour de Gandhi et de Nehru."],
+        ["Front de libération nationale (FLN)", "Algérie", "fondé en 1954", "Il mène la guerre d’indépendance contre la France."]
+      ],
+      aujourdhui: [
+        ["Parti national écossais (SNP)", "Écosse", "depuis 1934", "Indépendantiste, de centre gauche, tenant d’un nationalisme civique."],
+        ["Rassemblement national", "France", "depuis 1972", "L’ancien Front national : priorité nationale et limitation de l’immigration."],
+        ["Bharatiya Janata Party (BJP)", "Inde", "depuis 1980", "Parti du nationalisme hindou."],
+        ["Sinn Féin", "Irlande", "depuis 1905", "Républicain, partisan de la réunification de l’île."]
+      ]
+    },
     proches: ["fascisme", "conservatisme"],
     quiz: [
       { q: "Comment Ernest Renan définit-il la nation ?", r: ["Comme un « plébiscite de tous les jours »", "Comme une race pure", "Comme un territoire délimité par des frontières naturelles", "Comme l’ensemble des sujets d’un même roi"], e: "Pour Renan, la nation repose sur un passé partagé et surtout sur la volonté actuelle de vivre ensemble." },
@@ -543,6 +701,25 @@ window.IDEOLOGIES = [
       "Les partisans de la croissance verte estiment que l’innovation technique permettra de découpler richesse et pollution.",
       "Le mouvement est divisé sur la stratégie : réformer le capitalisme ou en sortir, nucléaire ou non, participation au pouvoir ou radicalité."
     ],
+    exemples: [
+      ["1971-1981", "La lutte du Larzac", "France", "Dix ans de résistance non violente de paysans contre l’extension d’un camp militaire : un moment fondateur de l’écologie française."],
+      ["1987", "Le protocole de Montréal", "Monde", "Les États interdisent les gaz qui détruisent la couche d’ozone : l’exemple d’un accord environnemental qui a fonctionné."],
+      ["1998-2005", "La coalition « rouge-verte »", "Allemagne", "Les Verts au gouvernement obtiennent la sortie programmée du nucléaire et une loi qui lance les énergies renouvelables."],
+      ["2008", "Les droits de la nature dans la Constitution", "Équateur", "Pour la première fois, une constitution reconnaît la nature comme sujet de droit."]
+    ],
+    partis: {
+      hier: [
+        ["Values Party", "Nouvelle-Zélande", "1972-1990", "Considéré comme le premier parti écologiste national au monde."],
+        ["Ecology Party", "Royaume-Uni", "1973-1990", "D’abord nommé PEOPLE, premier parti vert d’Europe."],
+        ["Les Verts", "France", "1984-2010", "Ils entrent au gouvernement en 1997 au sein de la « gauche plurielle »."]
+      ],
+      aujourdhui: [
+        ["Alliance 90 / Les Verts", "Allemagne", "depuis 1980", "Le parti vert le plus influent d’Europe."],
+        ["Les Écologistes", "France", "depuis 2010", "Fondé sous le nom d’Europe Écologie-Les Verts."],
+        ["Ecolo", "Belgique", "depuis 1980", "Parti vert francophone."],
+        ["Parti vert européen", "Europe", "depuis 2004", "Fédération des partis verts du continent."]
+      ]
+    },
     proches: [],
     quiz: [
       { q: "Quel livre de 1962 est considéré comme le point de départ du mouvement écologiste moderne ?", r: ["Printemps silencieux", "Le Capital", "Le Principe responsabilité", "Les Limites à la croissance"], e: "Rachel Carson y montre les effets des pesticides, notamment le DDT, sur les oiseaux et toute la chaîne du vivant." },
@@ -607,6 +784,25 @@ window.IDEOLOGIES = [
       "Le mouvement est traversé de débats internes vifs : universalisme ou intersectionnalité, prostitution, port du voile, place des personnes trans.",
       "Le féminisme « blanc et bourgeois » a été critiqué pour avoir longtemps ignoré les femmes pauvres et non blanches."
     ],
+    exemples: [
+      ["1903-1928", "Le combat des suffragettes", "Royaume-Uni", "Manifestations, grèves de la faim, emprisonnements : les Britanniques obtiennent le vote en 1918 (sous conditions) puis à égalité avec les hommes en 1928."],
+      ["1965-1975", "Une décennie de droits nouveaux", "France", "Droit de travailler et d’ouvrir un compte sans l’accord du mari (1965), contraception (1967), dépénalisation de l’avortement (1975)."],
+      ["24 octobre 1975", "La grève des femmes", "Islande", "Neuf Islandaises sur dix cessent le travail, salarié comme domestique ; cinq ans plus tard, le pays élit la première femme présidente au suffrage universel."],
+      ["2004", "La loi contre les violences de genre", "Espagne", "Tribunaux spécialisés, protection et accompagnement des victimes : un modèle souvent cité en Europe."]
+    ],
+    partis: {
+      note: "Le féminisme est porté surtout par des associations et des mouvements ; ses revendications ont été reprises, à des degrés divers, par des partis de presque tout l’échiquier.",
+      hier: [
+        ["Union sociale et politique des femmes (WSPU)", "Royaume-Uni", "1903-1917", "L’organisation des suffragettes."],
+        ["Mouvement de libération des femmes (MLF)", "France", "années 1970", "Mouvement non mixte et sans hiérarchie, moteur de la lutte pour l’avortement."],
+        ["Parti pour l’égalité des femmes", "Royaume-Uni", "2015-2024", "Parti fondé pour imposer l’égalité à l’agenda des autres formations."]
+      ],
+      aujourdhui: [
+        ["Planning familial", "France", "depuis 1956", "Association pour l’accès à la contraception, à l’avortement et à l’éducation sexuelle."],
+        ["National Organization for Women (NOW)", "États-Unis", "depuis 1966", "Grande organisation féministe américaine, cofondée par Betty Friedan."],
+        ["Ni una menos", "Argentine", "depuis 2015", "Mouvement de masse contre les féminicides, qui a essaimé en Amérique latine."]
+      ]
+    },
     proches: [],
     quiz: [
       { q: "Que signifie la phrase de Simone de Beauvoir « On ne naît pas femme, on le devient » ?", r: ["La féminité est construite par la société et l’éducation", "Les femmes naissent sans droits", "Les femmes doivent mériter leur statut", "La biologie détermine le destin des femmes"], e: "Beauvoir distingue le fait biologique d’être femelle du rôle social assigné aux femmes." },
@@ -666,6 +862,25 @@ window.IDEOLOGIES = [
       "Considérer l’impôt comme un vol reviendrait à ignorer ce que chacun doit à la société qui rend sa prospérité possible.",
       "La liberté de contracter serait illusoire quand les parties sont en situation très inégale."
     ],
+    exemples: [
+      ["930-1262", "L’Islande médiévale", "Islande", "Une société sans roi ni administration, où la justice repose sur des chefs choisis et des arbitrages privés : un cas d’école cher aux anarcho-capitalistes."],
+      ["1961-1971", "Le « non-interventionnisme positif »", "Hong Kong", "Le secrétaire aux Finances John Cowperthwaite maintient impôts très bas et libre-échange total, refusant jusqu’à la collecte de statistiques économiques."],
+      ["Depuis 2003", "Le Free State Project", "New Hampshire, États-Unis", "Des milliers de libertariens s’installent dans un même petit État pour peser sur sa politique."],
+      ["Depuis décembre 2023", "La présidence de Javier Milei", "Argentine", "Coupes massives dans la dépense publique et dérégulation : la première expérience de gouvernement menée par un libertarien déclaré."]
+    ],
+    partis: {
+      note: "Aucun État n’a jamais appliqué intégralement le programme libertarien : ses partisans citent des expériences partielles.",
+      hier: [
+        ["Démocratie libérale", "France", "1997-2002", "Parti d’Alain Madelin, le plus proche des idées libérales classiques dans la France récente."],
+        ["Parti libertarien des années 1970", "États-Unis", "1971-1980", "Né de l’opposition à la conscription et au contrôle des prix ; il dépasse 900 000 voix à la présidentielle de 1980."]
+      ],
+      aujourdhui: [
+        ["Parti libertarien", "États-Unis", "depuis 1971", "Troisième parti du pays, loin derrière les deux grands."],
+        ["La Libertad Avanza", "Argentine", "depuis 2021", "La coalition de Javier Milei."],
+        ["ACT", "Nouvelle-Zélande", "depuis 1994", "Parti libéral classique : baisse des impôts et réduction de l’État."],
+        ["Parti libertarien du Canada", "Canada", "depuis 1973", "Petit parti fédéral."]
+      ]
+    },
     proches: ["liberalisme", "anarchisme"],
     quiz: [
       { q: "Qu’énonce le principe de non-agression ?", r: ["Nul ne peut initier la force contre la personne ou les biens d’autrui", "Aucun pays ne doit posséder d’armée", "Les grèves sont interdites", "L’État a le monopole de la violence légitime"], e: "C’est l’axiome central du libertarianisme : seule la légitime défense justifie l’usage de la force." },
@@ -726,6 +941,25 @@ window.IDEOLOGIES = [
       "À gauche, on lui reproche son conservatisme sur les questions de famille et de mœurs.",
       "Avec la sécularisation, ces partis sont accusés d’avoir perdu leur identité pour devenir de simples partis de centre droit."
     ],
+    exemples: [
+      ["1949-1963", "L’Allemagne d’Adenauer", "Allemagne de l’Ouest", "Reconstruction, économie sociale de marché, ancrage à l’Ouest et réconciliation avec la France."],
+      ["1946-1992", "L’Italie de la Démocratie chrétienne", "Italie", "Le parti participe à tous les gouvernements pendant près d’un demi-siècle, avant de sombrer dans les scandales de corruption."],
+      ["1951", "La Communauté européenne du charbon et de l’acier", "Europe des Six", "Portée par Schuman, Adenauer et De Gasperi, tous trois démocrates-chrétiens, elle amorce la construction européenne."],
+      ["1964-1970", "La « révolution dans la liberté »", "Chili", "Le président Eduardo Frei mène réforme agraire et politique sociale en se voulant une alternative au marxisme."]
+    ],
+    partis: {
+      hier: [
+        ["Zentrum", "Allemagne", "1870-1933", "Parti des catholiques allemands, pilier de la république de Weimar."],
+        ["Mouvement républicain populaire (MRP)", "France", "1944-1967", "Le parti de Robert Schuman et de Georges Bidault."],
+        ["Democrazia Cristiana", "Italie", "1943-1994", "Parti dominant de l’Italie d’après-guerre."]
+      ],
+      aujourdhui: [
+        ["CDU/CSU", "Allemagne", "depuis 1945", "L’Union chrétienne-démocrate et son alliée bavaroise."],
+        ["Appel chrétien-démocrate (CDA)", "Pays-Bas", "depuis 1980", "Il réunit catholiques et protestants."],
+        ["Parti populaire autrichien (ÖVP)", "Autriche", "depuis 1945", "Parti chrétien-démocrate et conservateur."],
+        ["Parti populaire européen (PPE)", "Europe", "depuis 1976", "Le plus grand groupe du Parlement européen."]
+      ]
+    },
     proches: ["conservatisme", "liberalisme", "social-democratie"],
     quiz: [
       { q: "Que signifie le principe de subsidiarité ?", r: ["Une décision doit être prise à l’échelon le plus proche possible des personnes concernées", "L’État doit subventionner toutes les entreprises", "L’Église doit diriger l’État", "Les riches doivent aider les pauvres par la charité"], e: "Formulé en 1931, ce principe figure aujourd’hui dans les traités de l’Union européenne." },

@@ -1,6 +1,6 @@
 /* Service worker : met l'application en cache pour un usage hors ligne.
    Incrémenter VERSION à chaque mise en ligne pour forcer la mise à jour. */
-const VERSION = "sociopolix-v1";
+const VERSION = "sociopolix-v2";
 const FICHIERS = [
   "./",
   "index.html",
