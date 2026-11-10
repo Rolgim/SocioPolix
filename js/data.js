@@ -61,7 +61,10 @@ window.IDEOLOGIES = [
       ["Libéralisme classique", "Défense des libertés et d’un État limité à ses fonctions essentielles (XVIIIe-XIXe siècles)."],
       ["Social-libéralisme", "Accepte l’intervention de l’État pour donner à chacun les moyens réels de sa liberté."],
       ["Ordolibéralisme", "École allemande : l’État fixe et fait respecter les règles de la concurrence sans diriger l’économie."],
-      ["Néolibéralisme", "Renouveau du XXe siècle prônant dérégulation, privatisations et ouverture des marchés."]
+      ["Néolibéralisme", "Renouveau du XXe siècle prônant dérégulation, privatisations et ouverture des marchés."],
+      ["Libéralisme conservateur", "Associe les libertés économiques et politiques à l’attachement à l’ordre et aux mœurs héritées (Tocqueville, Raymond Aron)."],
+      ["Libéralisme égalitaire", "Dans le sillage de Rawls : les inégalités ne sont justes que si elles profitent aux plus défavorisés."],
+      ["École autrichienne", "Mises et Hayek : le marché est un processus de découverte qu’aucun planificateur ne peut remplacer."]
     ],
     critiques: [
       "Les socialistes lui reprochent de proclamer des libertés « formelles » sans donner à tous les moyens matériels de les exercer.",
@@ -140,7 +143,10 @@ window.IDEOLOGIES = [
       ["Traditionalisme contre-révolutionnaire", "Rejet des principes de 1789, défense du trône et de l’autel (Maistre, Bonald)."],
       ["Conservatisme libéral", "Associe défense des institutions traditionnelles et économie de marché."],
       ["Néoconservatisme", "Courant américain de la fin du XXe siècle, favorable à une politique étrangère interventionniste."],
-      ["National-conservatisme", "Met l’accent sur la souveraineté nationale, l’identité culturelle et le contrôle de l’immigration."]
+      ["National-conservatisme", "Met l’accent sur la souveraineté nationale, l’identité culturelle et le contrôle de l’immigration."],
+      ["Conservatisme social", "Défense de la famille, de la religion et de la morale traditionnelle, notamment sur l’avortement et le mariage."],
+      ["Paléoconservatisme", "Courant américain hostile aux interventions militaires, à l’immigration et au libre-échange."],
+      ["Conservatisme « one-nation »", "Tradition britannique issue de Disraeli : les élites ont des devoirs envers les classes populaires."]
     ],
     critiques: [
       "Ses adversaires lui reprochent de justifier les hiérarchies et les injustices existantes au nom de la tradition.",
@@ -219,7 +225,10 @@ window.IDEOLOGIES = [
       ["Socialisme utopique", "Premiers socialistes (Saint-Simon, Fourier, Owen) qui imaginent des communautés modèles."],
       ["Socialisme démocratique", "Veut transformer la société par le suffrage universel et la loi."],
       ["Socialisme autogestionnaire", "Confie la gestion des entreprises aux travailleurs eux-mêmes."],
-      ["Guesdisme", "Courant marxiste français de Jules Guesde, centré sur la lutte des classes et le parti ouvrier."]
+      ["Guesdisme", "Courant marxiste français de Jules Guesde, centré sur la lutte des classes et le parti ouvrier."],
+      ["Austromarxisme", "École viennoise (Otto Bauer) cherchant une voie entre réformisme et bolchevisme."],
+      ["Socialisme chrétien", "Tire de l’Évangile une critique de l’argent et de l’exploitation."],
+      ["Socialismes africain et arabe", "Après les indépendances, Nyerere en Tanzanie ou Nasser en Égypte adaptent le socialisme aux réalités locales."]
     ],
     critiques: [
       "Les libéraux lui reprochent de menacer la liberté individuelle et l’efficacité économique en étendant le rôle de l’État.",
@@ -299,7 +308,11 @@ window.IDEOLOGIES = [
       ["Marxisme-léninisme", "Un parti d’avant-garde discipliné conduit la révolution et exerce la « dictature du prolétariat »."],
       ["Trotskisme", "Défend la révolution permanente et internationale contre la bureaucratie stalinienne."],
       ["Maoïsme", "Adapte le marxisme aux sociétés paysannes et prône la mobilisation permanente des masses."],
-      ["Eurocommunisme", "Dans les années 1970, des partis d’Europe de l’Ouest prennent leurs distances avec Moscou et acceptent le pluralisme."]
+      ["Eurocommunisme", "Dans les années 1970, des partis d’Europe de l’Ouest prennent leurs distances avec Moscou et acceptent le pluralisme."],
+      ["Stalinisme", "« Socialisme dans un seul pays », collectivisation forcée, terreur et culte du chef."],
+      ["Conseillisme", "Le pouvoir doit revenir aux conseils ouvriers et non au parti (Pannekoek, Luxemburg en partie)."],
+      ["Titisme", "Voie yougoslave : autogestion des entreprises et indépendance vis-à-vis de Moscou."],
+      ["Castrisme et guévarisme", "Révolution par la guérilla rurale, exportée en Amérique latine et en Afrique."]
     ],
     critiques: [
       "Les régimes communistes du XXe siècle ont été des dictatures à parti unique, responsables de répressions de masse, de famines et de camps (Goulag, Grand Bond en avant, Khmers rouges).",
@@ -377,7 +390,11 @@ window.IDEOLOGIES = [
       ["Mutuellisme", "Échange équitable entre producteurs indépendants, crédit gratuit (Proudhon)."],
       ["Communisme libertaire", "Mise en commun des biens sans État ni salariat (Kropotkine)."],
       ["Anarcho-syndicalisme", "Le syndicat est à la fois l’outil de la lutte et la base de la société future."],
-      ["Anarchisme individualiste", "Primat absolu de l’autonomie de l’individu sur toute organisation (Stirner)."]
+      ["Anarchisme individualiste", "Primat absolu de l’autonomie de l’individu sur toute organisation (Stirner)."],
+      ["Anarcha-féminisme", "L’État et le patriarcat sont deux formes d’une même domination (Emma Goldman)."],
+      ["Municipalisme libertaire", "Murray Bookchin : des communes autogérées en assemblées, fédérées entre elles."],
+      ["Anarchisme pacifiste", "Refus de toute violence, y compris révolutionnaire, à la suite de Tolstoï."],
+      ["Insurrectionnalisme", "Privilégie l’attaque directe et les petits groupes informels aux organisations durables."]
     ],
     critiques: [
       "Ses adversaires jugent irréaliste une société complexe sans État pour arbitrer les conflits et assurer la sécurité.",
@@ -454,7 +471,9 @@ window.IDEOLOGIES = [
       ["Révisionnisme", "Révision du marxisme par Bernstein : évolution graduelle plutôt que révolution."],
       ["Modèle nordique", "Impôts élevés, protection sociale universelle et négociation collective généralisée."],
       ["Travaillisme", "Tradition britannique née des syndicats plutôt que du marxisme."],
-      ["Troisième voie", "Dans les années 1990, synthèse avec le libéralisme économique (Blair, Schröder)."]
+      ["Troisième voie", "Dans les années 1990, synthèse avec le libéralisme économique (Blair, Schröder)."],
+      ["Fabianisme", "La Société fabienne, fondée à Londres en 1884, veut des réformes graduelles préparées par l’expertise."],
+      ["Socialisme libéral", "Carlo Rosselli puis Norberto Bobbio : la justice sociale comme accomplissement des libertés."]
     ],
     critiques: [
       "La gauche radicale lui reproche d’avoir renoncé à dépasser le capitalisme et de se contenter de l’aménager.",
@@ -530,7 +549,10 @@ window.IDEOLOGIES = [
       ["Fascisme italien", "Le modèle d’origine : État total, parti unique, corporatisme."],
       ["National-socialisme (nazisme)", "Variante allemande fondée sur le racisme biologique, l’antisémitisme et la conquête d’un « espace vital »."],
       ["Phalangisme", "Variante espagnole, mêlant nationalisme, catholicisme et syndicalisme d’État."],
-      ["Néofascisme", "Mouvements d’après 1945 qui se réclament de cet héritage ou en reprennent les thèmes."]
+      ["Néofascisme", "Mouvements d’après 1945 qui se réclament de cet héritage ou en reprennent les thèmes."],
+      ["Austrofascisme", "Régime autoritaire, catholique et corporatiste de Dollfuss en Autriche (1933-1938) ; son classement comme fascisme est discuté."],
+      ["Fascisme clérical", "Alliance du modèle fasciste et d’un nationalisme religieux, comme dans la Slovaquie de Tiso."],
+      ["Intégralisme brésilien", "Mouvement des « chemises vertes » de Plínio Salgado dans les années 1930."]
     ],
     critiques: [
       "Le fascisme a conduit à la suppression des libertés, à la guerre d’agression et, avec le nazisme, au génocide des Juifs et des Roms d’Europe.",
@@ -611,7 +633,11 @@ window.IDEOLOGIES = [
       ["Nationalisme civique", "La nation est une communauté de citoyens unis par des institutions et une volonté commune."],
       ["Nationalisme ethnique", "La nation est définie par l’ascendance, la langue ou la culture héritées."],
       ["Nationalisme de libération", "Lutte d’un peuple dominé ou colonisé pour son indépendance."],
-      ["Nationalisme intégral", "Doctrine de Maurras : la nation avant tout, contre la république et les « étrangers de l’intérieur »."]
+      ["Nationalisme intégral", "Doctrine de Maurras : la nation avant tout, contre la république et les « étrangers de l’intérieur »."],
+      ["Indépendantisme régional", "Revendication d’un État pour une nation sans État : Écosse, Catalogne, Québec, Corse."],
+      ["Pan-nationalismes", "Projets d’unir tous les peuples d’une même famille : panslavisme, pangermanisme."],
+      ["Irrédentisme", "Volonté de rattacher à la nation les territoires « non délivrés » peuplés de compatriotes."],
+      ["Souverainisme", "Refus des transferts de pouvoir à des instances supranationales, notamment européennes."]
     ],
     critiques: [
       "Poussé à l’extrême, il nourrit la xénophobie, l’exclusion des minorités et les guerres, comme l’ont montré les deux conflits mondiaux.",
@@ -694,7 +720,10 @@ window.IDEOLOGIES = [
       ["Environnementalisme", "Protéger la nature et corriger les pollutions sans bouleverser le système économique."],
       ["Écologie profonde", "La nature a une valeur en elle-même, indépendamment de son utilité pour l’humanité."],
       ["Écosocialisme", "Crise écologique et crise sociale ont la même cause : le capitalisme."],
-      ["Décroissance", "Réduire volontairement la production et la consommation dans les pays riches."]
+      ["Décroissance", "Réduire volontairement la production et la consommation dans les pays riches."],
+      ["Écologie sociale", "Murray Bookchin : la domination de la nature découle de la domination entre humains."],
+      ["Écomodernisme", "Mise sur la technologie (nucléaire, intensification agricole) pour réduire notre empreinte."],
+      ["Collapsologie", "Étude de l’effondrement possible de la civilisation industrielle et des façons de s’y préparer."]
     ],
     critiques: [
       "Ses adversaires lui reprochent de menacer l’emploi et le niveau de vie, ou de proposer une écologie « punitive ».",
@@ -777,7 +806,11 @@ window.IDEOLOGIES = [
       ["Féminisme libéral", "Obtenir l’égalité par la loi, l’éducation et l’accès à toutes les professions."],
       ["Féminisme matérialiste", "Analyse l’exploitation du travail domestique des femmes comme un rapport économique."],
       ["Féminisme radical", "Le patriarcat est le système d’oppression fondamental, qu’il faut abattre et non aménager."],
-      ["Féminisme intersectionnel", "Les oppressions de genre, de race et de classe se combinent et doivent être pensées ensemble."]
+      ["Féminisme intersectionnel", "Les oppressions de genre, de race et de classe se combinent et doivent être pensées ensemble."],
+      ["Féminisme universaliste", "Les droits sont les mêmes pour toutes et tous, sans distinction d’identité (Élisabeth Badinter)."],
+      ["Féminisme différentialiste", "Valorise une expérience et une parole propres aux femmes (Luce Irigaray, Hélène Cixous)."],
+      ["Écoféminisme", "Relie l’exploitation de la nature et la domination des femmes ; le mot est forgé par Françoise d’Eaubonne en 1974."],
+      ["Afroféminisme", "Part de l’expérience des femmes noires, à la suite du « Black feminism » américain."]
     ],
     critiques: [
       "Ses opposants lui reprochent de nier les différences entre les sexes ou d’attiser un conflit entre eux.",
@@ -855,7 +888,9 @@ window.IDEOLOGIES = [
       ["Minarchisme", "L’État doit se limiter à la police, à la justice et à la défense."],
       ["Anarcho-capitalisme", "Toutes les fonctions de l’État, y compris la sécurité, peuvent être assurées par le marché."],
       ["Objectivisme", "Philosophie d’Ayn Rand fondée sur la raison et l’intérêt personnel."],
-      ["Libertarianisme de gauche", "Associe propriété de soi et partage égalitaire des ressources naturelles."]
+      ["Libertarianisme de gauche", "Associe propriété de soi et partage égalitaire des ressources naturelles."],
+      ["Agorisme", "Samuel Konkin : saper l’État par l’économie parallèle plutôt que par les élections."],
+      ["Paléolibertarianisme", "Allie l’hostilité à l’État à un conservatisme culturel (le dernier Rothbard)."]
     ],
     critiques: [
       "Ses adversaires estiment qu’un État minimal laisserait sans protection les plus faibles et sans réponse les problèmes collectifs (pollution, santé publique).",
@@ -934,7 +969,10 @@ window.IDEOLOGIES = [
       ["Catholicisme social", "Mouvement du XIXe siècle qui veut répondre chrétiennement à la question ouvrière."],
       ["Personnalisme", "Philosophie de Mounier et Maritain : la personne, ni individu atomisé ni élément de la masse."],
       ["Christianisme social protestant", "Équivalent protestant, influent en Allemagne, aux Pays-Bas et en Scandinavie."],
-      ["Aile sociale et aile conservatrice", "Les partis démocrates-chrétiens réunissent des syndicalistes chrétiens comme des conservateurs."]
+      ["Aile sociale et aile conservatrice", "Les partis démocrates-chrétiens réunissent des syndicalistes chrétiens comme des conservateurs."],
+      ["Popularisme", "Doctrine de Sturzo : un parti inspiré par le christianisme mais indépendant de l’Église et ouvert à tous."],
+      ["Distributisme", "Chesterton et Belloc : répartir largement la propriété plutôt que la concentrer ou la collectiviser."],
+      ["Christianisme de gauche", "Du Sillon de Marc Sangnier aux chrétiens engagés dans le syndicalisme et le socialisme."]
     ],
     critiques: [
       "Les défenseurs d’une laïcité stricte contestent qu’une référence religieuse inspire un programme politique.",
@@ -966,6 +1004,338 @@ window.IDEOLOGIES = [
       { q: "Quelle encyclique de 1891 fonde la doctrine sociale de l’Église ?", r: ["Rerum novarum", "Laudato si’", "Humanae vitae", "Quanta cura"], e: "Léon XIII y traite « des choses nouvelles » : la condition ouvrière née de l’industrialisation." },
       { q: "Que propose la déclaration Schuman du 9 mai 1950 ?", r: ["Mettre en commun le charbon et l’acier de la France et de l’Allemagne", "Créer une monnaie unique", "Fonder l’OTAN", "Supprimer les frontières en Europe"], e: "Elle débouche en 1951 sur la Communauté européenne du charbon et de l’acier (CECA)." },
       { q: "Qu’est-ce que l’« économie sociale de marché » ?", r: ["Un marché concurrentiel accompagné d’une forte protection sociale", "Une économie entièrement planifiée", "Un marché sans aucune règle", "Une économie fondée sur le troc"], e: "Mise en œuvre en Allemagne de l’Ouest après 1948, elle combine concurrence, monnaie stable et État social." }
+    ]
+  },
+  {
+    id: "republicanisme",
+    nom: "Républicanisme",
+    couleur: "#a3324a",
+    naissance: "Antiquité, renouveau au XVIIIe siècle",
+    accroche: "La chose publique avant les intérêts particuliers : on est libre quand on se gouverne soi-même.",
+    resume: "Le républicanisme tient que le pouvoir est l’affaire de tous (res publica, la « chose publique ») et non la propriété d’un roi ou d’une caste. Être libre, ce n’est pas seulement être laissé tranquille : c’est ne dépendre du bon vouloir de personne et participer à la loi commune. En France, il a pris une forme particulière : souveraineté du peuple, État unitaire, école publique et laïcité.",
+    idees: [
+      ["Souveraineté du peuple", "La loi est légitime parce qu’elle exprime la volonté des citoyens et non celle d’un monarque."],
+      ["Liberté comme non-domination", "Être libre, c’est ne pas vivre à la merci du pouvoir arbitraire d’autrui, même bienveillant."],
+      ["Intérêt général et vertu civique", "La république suppose des citoyens capables de faire passer le bien commun avant leur intérêt propre."],
+      ["Laïcité", "L’État ne reconnaît aucune religion et garantit la liberté de conscience de chacun."],
+      ["Égalité par l’école", "L’instruction publique forme des citoyens éclairés et ouvre les places au mérite plutôt qu’à la naissance."]
+    ],
+    histoire: [
+      [1762, "Parution de « Du contrat social »", "Rousseau y fonde l’autorité politique sur la volonté générale du peuple souverain."],
+      [1792, "Proclamation de la Première République", "La monarchie est abolie en France le 21 septembre."],
+      [1848, "Deuxième République", "Elle instaure le suffrage universel masculin et abolit l’esclavage dans les colonies."],
+      [1870, "Proclamation de la Troisième République", "Après la défaite de Sedan, la république s’installe pour soixante-dix ans."],
+      [1882, "Lois Ferry sur l’école", "L’enseignement primaire devient gratuit, obligatoire et laïc."],
+      [1905, "Loi de séparation des Églises et de l’État", "La République « ne reconnaît, ne salarie ni ne subventionne aucun culte »."],
+      [1958, "Constitution de la Cinquième République", "Son article premier définit la France comme une « République indivisible, laïque, démocratique et sociale »."],
+      [1997, "Parution de « Républicanisme » de Philip Pettit", "L’ouvrage relance la théorie républicaine dans la philosophie contemporaine."]
+    ],
+    exemples: [
+      ["509-27 av. J.-C.", "La République romaine", "Rome", "Magistrats élus pour un an, Sénat et assemblées du peuple : le modèle auquel se réfèrent tous les républicains ultérieurs."],
+      ["697-1797", "La Sérénissime", "Venise", "Une république aristocratique millénaire, où le doge est élu et étroitement surveillé."],
+      ["1792-1804", "La Première République", "France", "Elle invente la citoyenneté moderne et la levée en masse, mais bascule dans la Terreur puis dans le pouvoir personnel de Bonaparte."],
+      ["1870-1940", "La Troisième République", "France", "École publique, libertés de la presse et d’association, séparation des Églises et de l’État : le « modèle républicain » français s’y fixe."]
+    ],
+    figures: [
+      ["Nicolas Machiavel", "1469-1527", "Penseur florentin, auteur du « Prince », qui célèbre aussi les républiques libres de l’Antiquité."],
+      ["Jean-Jacques Rousseau", "1712-1778", "Philosophe genevois, théoricien de la volonté générale et de la souveraineté du peuple."],
+      ["Nicolas de Condorcet", "1743-1794", "Mathématicien et député, défenseur de l’instruction publique et du droit de vote des femmes, mort sous la Terreur."],
+      ["Maximilien Robespierre", "1758-1794", "Chef de file des Jacobins, figure de la « vertu » révolutionnaire et de la Terreur."],
+      ["Jules Ferry", "1832-1893", "Ministre de l’Instruction publique, père de l’école gratuite, laïque et obligatoire, et promoteur de l’expansion coloniale."],
+      ["Léon Gambetta", "1838-1882", "Tribun qui proclame la République le 4 septembre 1870 et la fait accepter dans les campagnes."],
+      ["Georges Clemenceau", "1841-1929", "Radical surnommé « le Tigre », dreyfusard, chef du gouvernement pendant la Grande Guerre."],
+      ["Philip Pettit", "né en 1945", "Philosophe irlandais qui définit la liberté comme non-domination."]
+    ],
+    oeuvres: [
+      ["Discours sur la première décade de Tite-Live", "Nicolas Machiavel", 1531],
+      ["Du contrat social", "Jean-Jacques Rousseau", 1762],
+      ["Cinq mémoires sur l’instruction publique", "Nicolas de Condorcet", 1791],
+      ["Le Moment machiavélien (analyse)", "John Pocock", 1975],
+      ["Républicanisme", "Philip Pettit", 1997]
+    ],
+    courants: [
+      ["Républicanisme classique", "De Rome à Florence : régime mixte, vertu civique, crainte de la corruption."],
+      ["Jacobinisme", "République une et indivisible, État centralisé, primat de la volonté nationale."],
+      ["Radicalisme", "Sous la IIIe République : laïcité, école, défense des « petits » contre les « gros »."],
+      ["Solidarisme", "Léon Bourgeois : chacun a une dette envers la société, ce qui justifie l’impôt et la protection sociale."],
+      ["Républicanisme américain", "Les Pères fondateurs : équilibre des pouvoirs et méfiance envers les factions."],
+      ["Néo-républicanisme", "Pettit et Skinner : la liberté comme absence de domination plutôt que simple absence d’entraves."]
+    ],
+    partis: {
+      note: "En France, presque tous les partis se réclament aujourd’hui de la République ; ne figurent ici que ceux qui en ont fait le cœur de leur identité.",
+      hier: [
+        ["Club des jacobins", "France", "1789-1794", "Le principal club politique de la Révolution."],
+        ["Union républicaine", "France", "1871-1885", "Le groupe de Gambetta, qui installe la IIIe République."],
+        ["Mouvement des citoyens", "France", "1993-2003", "Fondé par Jean-Pierre Chevènement pour défendre une république sociale et souveraine."]
+      ],
+      aujourdhui: [
+        ["Mouvement républicain et citoyen", "France", "depuis 2003", "Héritier du Mouvement des citoyens."],
+        ["Parti radical de gauche", "France", "depuis 1972", "Branche de gauche de la vieille famille radicale."],
+        ["Fianna Fáil", "Irlande", "depuis 1926", "Il se définit comme « le parti républicain », héritier du combat pour l’indépendance."]
+      ]
+    },
+    critiques: [
+      "On lui reproche un universalisme abstrait, qui proclame l’égalité des citoyens sans voir les discriminations réelles.",
+      "La IIIe République a mené la colonisation au nom d’une « mission civilisatrice » contraire à ses propres principes.",
+      "Les libéraux craignent qu’au nom de la volonté générale, la majorité n’écrase les droits des individus et des minorités."
+    ],
+    proches: ["liberalisme", "gaullisme", "socialisme"],
+    quiz: [
+      { q: "Que signifie « res publica », d’où vient le mot république ?", r: ["La chose publique", "Le pouvoir du roi", "La loi du plus fort", "Le peuple en armes"], e: "La république est le régime où le pouvoir est l’affaire de tous et non le bien d’un seul." },
+      { q: "Comment le néo-républicanisme de Philip Pettit définit-il la liberté ?", r: ["Comme l’absence de domination", "Comme l’absence de toute loi", "Comme l’obéissance au chef", "Comme la richesse matérielle"], e: "On peut être laissé tranquille par un maître bienveillant et rester dominé : la liberté suppose de ne dépendre de l’arbitraire de personne." },
+      { q: "Que pose la loi française de 1905 ?", r: ["La séparation des Églises et de l’État", "L’école gratuite et obligatoire", "Le suffrage universel", "La liberté de la presse"], e: "La République garantit la liberté de conscience et ne reconnaît ni ne finance aucun culte." },
+      { q: "Qu’appelle-t-on « volonté générale » chez Rousseau ?", r: ["La volonté du corps des citoyens visant l’intérêt commun", "La somme des désirs de chacun", "La décision du gouvernement", "L’opinion des plus instruits"], e: "Rousseau la distingue de la « volonté de tous », simple addition d’intérêts particuliers." }
+    ]
+  },
+
+  {
+    id: "populisme",
+    nom: "Populisme",
+    couleur: "#e67e00",
+    naissance: "Fin du XIXe siècle",
+    accroche: "Le peuple contre les élites.",
+    resume: "Le populisme est moins une doctrine complète qu’une manière de concevoir la politique : il oppose un « peuple » vertueux à une « élite » corrompue et affirme que la politique doit exprimer directement la volonté populaire. Parce que cette idée est « mince », elle se combine avec d’autres : il existe des populismes de gauche comme de droite. Le mot sert souvent d’accusation ; peu de mouvements le revendiquent.",
+    idees: [
+      ["Le peuple contre l’élite", "La société est coupée en deux camps : les gens ordinaires et une minorité de privilégiés qui les trahit."],
+      ["Volonté populaire directe", "Le référendum et le lien direct avec le dirigeant valent mieux que les médiations parlementaires."],
+      ["Leader charismatique", "Un chef incarne le peuple et parle en son nom, par-dessus les partis."],
+      ["Méfiance envers les intermédiaires", "Partis, médias, juges et experts sont soupçonnés de confisquer la démocratie."],
+      ["Idéologie « mince »", "Sans programme économique propre, le populisme s’adosse au nationalisme, au socialisme ou au libéralisme."]
+    ],
+    histoire: [
+      [1874, "« Marche vers le peuple » des narodniki", "De jeunes intellectuels russes partent dans les campagnes pour soulever la paysannerie."],
+      [1889, "Apogée du boulangisme", "Le général Boulanger, élu triomphalement à Paris, semble en mesure de renverser la République."],
+      [1892, "Fondation du Parti populiste américain", "Le People’s Party défend les fermiers endettés contre les banques et les compagnies de chemin de fer."],
+      [1946, "Juan Perón est élu président de l’Argentine", "Il s’appuie sur les ouvriers et les syndicats, les « sans-chemise »."],
+      [1956, "Percée électorale du poujadisme", "Le mouvement des petits commerçants en révolte contre l’impôt fait élire 52 députés."],
+      [1998, "Hugo Chávez est élu président du Venezuela", "Il lance la « révolution bolivarienne » au nom des pauvres contre l’oligarchie."],
+      [2005, "Parution de « La Raison populiste »", "Ernesto Laclau y réhabilite le populisme comme logique normale de la politique."],
+      [2016, "Vote du Brexit et élection de Donald Trump", "Deux victoires attribuées à la révolte des électeurs contre les élites établies."]
+    ],
+    exemples: [
+      ["1946-1955", "L’Argentine de Perón", "Argentine", "Hausses de salaires, droits sociaux, nationalisations et culte du couple présidentiel, sur fond de mise au pas de l’opposition."],
+      ["1999-2013", "Le Venezuela de Chávez", "Venezuela", "Programmes sociaux financés par le pétrole et référendums répétés, mais concentration du pouvoir et effondrement économique ultérieur."],
+      ["Depuis 2010", "La Hongrie de Viktor Orbán", "Hongrie", "Un pouvoir qui revendique la « démocratie illibérale » et réduit l’indépendance de la justice et des médias."],
+      ["2018-2019", "Le gouvernement Mouvement 5 étoiles-Ligue", "Italie", "Une coalition entre un populisme « antisystème » et un populisme national."]
+    ],
+    figures: [
+      ["Georges Boulanger", "1837-1891", "Général français dont la popularité fit trembler la IIIe République à la fin des années 1880."],
+      ["William Jennings Bryan", "1860-1925", "Orateur américain, trois fois candidat à la présidence, défenseur des fermiers contre les banquiers de l’Est."],
+      ["Juan Perón", "1895-1974", "Militaire, trois fois président de l’Argentine, porté par les ouvriers et les syndicats."],
+      ["Pierre Poujade", "1920-2003", "Papetier du Lot, meneur de la révolte des petits commerçants contre le fisc dans les années 1950."],
+      ["Ernesto Laclau", "1935-2014", "Philosophe argentin pour qui construire un « peuple » est le cœur de toute politique."],
+      ["Chantal Mouffe", "née en 1943", "Philosophe belge, théoricienne d’un « populisme de gauche »."],
+      ["Donald Trump", "né en 1946", "Homme d’affaires, élu président des États-Unis en 2016 puis en 2024 sur le slogan « Make America Great Again »."],
+      ["Hugo Chávez", "1954-2013", "Officier, président du Venezuela de 1999 à sa mort, promoteur de la « révolution bolivarienne »."]
+    ],
+    oeuvres: [
+      ["La Raison populiste", "Ernesto Laclau", 2005],
+      ["Qu’est-ce que le populisme ? (analyse)", "Jan-Werner Müller", 2016],
+      ["Brève introduction au populisme (analyse)", "Cas Mudde et Cristóbal Rovira Kaltwasser", 2017],
+      ["Pour un populisme de gauche", "Chantal Mouffe", 2018],
+      ["Le Siècle du populisme (analyse)", "Pierre Rosanvallon", 2020]
+    ],
+    courants: [
+      ["Populisme agrarien", "Les origines : narodniki russes et People’s Party américain, au nom des paysans."],
+      ["Populisme latino-américain", "Un chef, des syndicats et la redistribution : Perón en Argentine, Vargas au Brésil."],
+      ["National-populisme", "À droite : le peuple est défini par la nation, contre les élites et l’immigration."],
+      ["Populisme de gauche", "Le peuple contre l’oligarchie financière : Podemos, Syriza."],
+      ["Césarisme", "Le lien direct entre un chef et le peuple, ratifié par plébiscite, sur le modèle des deux Napoléon."],
+      ["Techno-populisme", "La démocratie directe par les outils numériques, comme au Mouvement 5 étoiles."]
+    ],
+    partis: {
+      note: "« Populiste » est rarement une étiquette revendiquée : ce sont surtout les politologues et les adversaires qui l’emploient. En France, le Rassemblement national et La France insoumise sont souvent ainsi qualifiés.",
+      hier: [
+        ["People’s Party", "États-Unis", "1892-1908", "Le premier parti à s’être appelé « populiste »."],
+        ["Mouvement boulangiste", "France", "1886-1891", "Coalition hétéroclite de mécontents autour du général Boulanger."],
+        ["Union de défense des commerçants et artisans", "France", "1953-1962", "Le mouvement de Pierre Poujade."]
+      ],
+      aujourdhui: [
+        ["Parti justicialiste", "Argentine", "depuis 1946", "Le parti péroniste, toujours central dans la vie politique argentine."],
+        ["Mouvement 5 étoiles", "Italie", "depuis 2009", "Né d’un blog, contre la « caste » politique."],
+        ["Podemos", "Espagne", "depuis 2014", "Issu du mouvement des Indignés, inspiré par Laclau et Mouffe."],
+        ["Fidesz", "Hongrie", "depuis 1988", "Parti de Viktor Orbán, d’abord libéral, devenu national-populiste."]
+      ]
+    },
+    critiques: [
+      "Pour Jan-Werner Müller, le danger du populisme est de prétendre représenter seul le « vrai » peuple, ce qui nie le pluralisme.",
+      "Le terme est jugé flou et polémique : il servirait à disqualifier toute critique des élites.",
+      "Ses défenseurs y voient au contraire le symptôme d’une démocratie où une partie des citoyens ne se sent plus représentée."
+    ],
+    proches: ["nationalisme", "conservatisme", "socialisme", "fascisme", "gaullisme"],
+    quiz: [
+      { q: "Quelle opposition structure le discours populiste ?", r: ["Le peuple contre les élites", "Les villes contre les campagnes", "Les jeunes contre les vieux", "Les croyants contre les athées"], e: "Selon le politologue Cas Mudde, le populisme oppose un « peuple pur » à une « élite corrompue »." },
+      { q: "Pourquoi dit-on du populisme qu’il est une idéologie « mince » ?", r: ["Parce qu’il doit se combiner avec une autre idéologie, de gauche ou de droite", "Parce qu’il a peu de partisans", "Parce qu’il n’existe que depuis dix ans", "Parce qu’il refuse de participer aux élections"], e: "Il n’a pas de programme économique ou social propre : il s’adosse au nationalisme, au socialisme, etc." },
+      { q: "Selon Jan-Werner Müller, quel est le trait dangereux du populisme ?", r: ["Prétendre être le seul représentant légitime du peuple", "Vouloir baisser les impôts", "Organiser des élections", "Critiquer le gouvernement"], e: "Si un seul mouvement incarne le « vrai » peuple, ses opposants deviennent illégitimes." },
+      { q: "Quel mouvement a porté le premier le nom de « populiste » aux États-Unis ?", r: ["Le People’s Party des années 1890", "Le Parti démocrate de Jefferson", "Le Tea Party", "Le Parti communiste américain"], e: "Il défendait les fermiers de l’Ouest et du Sud contre les banques et les compagnies ferroviaires." }
+    ]
+  },
+
+  {
+    id: "gaullisme",
+    nom: "Gaullisme",
+    couleur: "#6b7a2a",
+    naissance: "1940",
+    accroche: "« Une certaine idée de la France » : indépendance nationale et État fort, au-dessus des partis.",
+    resume: "Né du refus de la défaite en 1940, le gaullisme est d’abord une pratique : celle du général de Gaulle. Il repose sur quelques convictions durables : la France doit rester indépendante et tenir son rang, l’État doit être dirigé par un exécutif fort tirant sa légitimité du peuple, et le pays doit se rassembler par-delà la gauche et la droite. Il prolonge une tradition française plus ancienne, souvent rapprochée du bonapartisme.",
+    idees: [
+      ["Indépendance nationale", "La France ne doit dépendre d’aucun bloc : dissuasion nucléaire propre, diplomatie autonome."],
+      ["Exécutif fort", "Un président « clé de voûte » des institutions, garant de la continuité de l’État."],
+      ["Rassemblement", "Dépasser le « régime des partis » et le clivage entre la gauche et la droite."],
+      ["Lien direct avec le peuple", "Le référendum et l’élection du président au suffrage universel fondent la légitimité."],
+      ["Participation", "Associer les salariés aux résultats et aux décisions de l’entreprise, entre capitalisme et collectivisme."],
+      ["Europe des nations", "Une coopération entre États souverains plutôt qu’une fédération."]
+    ],
+    histoire: [
+      [1940, "Appel du 18 juin", "Depuis Londres, de Gaulle refuse l’armistice et appelle à poursuivre le combat."],
+      [1944, "Libération et gouvernement provisoire", "De Gaulle rétablit la République et l’autorité de l’État."],
+      [1946, "Discours de Bayeux", "Il y expose son projet d’institutions dominées par un chef de l’État au-dessus des partis."],
+      [1947, "Fondation du RPF", "Le Rassemblement du peuple français veut réformer la IVe République."],
+      [1958, "Retour au pouvoir et Ve République", "En pleine crise algérienne, de Gaulle fait adopter une nouvelle Constitution."],
+      [1962, "Référendum sur l’élection du président au suffrage universel", "Le chef de l’État tiendra désormais son pouvoir directement des électeurs."],
+      [1966, "Retrait du commandement intégré de l’OTAN", "La France reste alliée des États-Unis mais reprend le contrôle de ses forces."],
+      [1969, "Démission du général de Gaulle", "Désavoué par un référendum sur les régions et le Sénat, il quitte aussitôt le pouvoir."],
+      [1976, "Jacques Chirac fonde le RPR", "Le néo-gaullisme s’organise en parti de conquête du pouvoir."]
+    ],
+    exemples: [
+      ["1940-1944", "La France libre", "Londres, Alger, empire", "Un gouvernement en exil et une armée qui maintiennent la France parmi les vainqueurs."],
+      ["1944-1946", "Le gouvernement provisoire", "France", "Droit de vote des femmes, Sécurité sociale, nationalisations : un programme mené avec toutes les forces de la Résistance."],
+      ["1958-1969", "La République gaullienne", "France", "Fin de la guerre d’Algérie, force de frappe nucléaire, planification et grands projets industriels."],
+      ["2003", "Le refus de la guerre d’Irak", "France", "Jacques Chirac s’oppose à l’intervention américaine : un geste souvent présenté comme le dernier acte gaullien."]
+    ],
+    figures: [
+      ["Charles de Gaulle", "1890-1970", "Général, chef de la France libre, fondateur de la Ve République et président de 1959 à 1969."],
+      ["André Malraux", "1901-1976", "Écrivain, ministre des Affaires culturelles de 1959 à 1969."],
+      ["René Capitant", "1901-1970", "Juriste, théoricien de la participation et figure des gaullistes de gauche."],
+      ["Georges Pompidou", "1911-1974", "Premier ministre puis président de 1969 à 1974, artisan de la modernisation industrielle."],
+      ["Michel Debré", "1912-1996", "Principal rédacteur de la Constitution de 1958 et premier Premier ministre de la Ve République."],
+      ["Jacques Chaban-Delmas", "1915-2000", "Résistant, maire de Bordeaux, Premier ministre porteur du projet de « nouvelle société »."],
+      ["Jacques Chirac", "1932-2019", "Fondateur du RPR, président de 1995 à 2007."],
+      ["Philippe Séguin", "1943-2010", "Voix du « gaullisme social », chef de file du non au traité de Maastricht en 1992."]
+    ],
+    oeuvres: [
+      ["Le Fil de l’épée", "Charles de Gaulle", 1932],
+      ["Vers l’armée de métier", "Charles de Gaulle", 1934],
+      ["Mémoires de guerre", "Charles de Gaulle", 1954],
+      ["Les Droites en France (analyse)", "René Rémond", 1954],
+      ["Mémoires d’espoir", "Charles de Gaulle", 1970]
+    ],
+    courants: [
+      ["Gaullisme de guerre", "Celui de la France libre : refus de la défaite et légitimité de la Résistance."],
+      ["Gaullisme social", "Ou gaullisme de gauche : participation, rôle de l’État, justice sociale (Capitant, Séguin)."],
+      ["Pompidolisme", "Version plus conservatrice et industrialiste, attentive aux milieux d’affaires."],
+      ["Néo-gaullisme", "Le RPR de Chirac, qui se rapproche peu à peu du libéralisme et de l’Europe."],
+      ["Souverainisme gaulliste", "Au nom de l’indépendance nationale, refus de Maastricht et de l’Europe fédérale."],
+      ["Héritage bonapartiste", "Selon l’historien René Rémond : autorité de l’exécutif et appel direct au peuple."]
+    ],
+    partis: {
+      note: "Aujourd’hui, des responsables de presque tous les bords se réclament de De Gaulle ; aucun parti n’est reconnu comme son unique héritier.",
+      hier: [
+        ["Rassemblement du peuple français (RPF)", "France", "1947-1955", "Fondé par de Gaulle lui-même."],
+        ["Union pour la nouvelle République (UNR)", "France", "1958-1967", "Le parti qui soutient de Gaulle au début de la Ve République."],
+        ["Rassemblement pour la République (RPR)", "France", "1976-2002", "Le parti de Jacques Chirac, fondu ensuite dans l’UMP."]
+      ],
+      aujourdhui: [
+        ["Debout la France", "France", "depuis 2008", "Parti de Nicolas Dupont-Aignan, sur une ligne souverainiste."],
+        ["Fondation Charles-de-Gaulle", "France", "depuis 1971", "Elle n’est pas un parti : elle entretient la mémoire et l’étude de l’œuvre du général."]
+      ]
+    },
+    critiques: [
+      "François Mitterrand y voyait un « coup d’État permanent » : un pouvoir personnel échappant au contrôle du Parlement.",
+      "Doctrine ou pragmatisme d’un seul homme ? Beaucoup doutent que le gaullisme ait survécu à son fondateur.",
+      "Mai 68 lui reproche son autoritarisme et son conservatisme moral ; les partisans de l’Algérie française, d’avoir abandonné celle-ci."
+    ],
+    proches: ["conservatisme", "nationalisme", "republicanisme", "populisme", "democratie-chretienne"],
+    quiz: [
+      { q: "Quelle Europe le général de Gaulle défend-il ?", r: ["Une Europe des nations, coopération entre États souverains", "Une fédération dotée d’un gouvernement européen", "Une Europe placée sous direction américaine", "Aucune coopération européenne"], e: "Il accepte le Marché commun mais refuse tout transfert de souveraineté à une autorité supranationale." },
+      { q: "Que désigne la « participation » dans le gaullisme ?", r: ["L’association des salariés aux bénéfices et à la marche de l’entreprise", "L’obligation de voter", "La participation de la France à l’OTAN", "L’entrée des communistes au gouvernement"], e: "De Gaulle y voyait une troisième voie entre capitalisme et collectivisme." },
+      { q: "Que dénonce de Gaulle sous le nom de « régime des partis » ?", r: ["Des gouvernements faibles, soumis aux combinaisons parlementaires", "L’interdiction des partis politiques", "Le parti unique", "Le financement public des campagnes"], e: "C’est sa critique des IIIe et IVe Républiques, exposée dès le discours de Bayeux en 1946." },
+      { q: "Pourquoi de Gaulle quitte-t-il le pouvoir en 1969 ?", r: ["Il est désavoué par un référendum", "Il perd l’élection présidentielle", "Il est renversé par l’armée", "Son mandat arrive à son terme"], e: "Ayant lié son sort au résultat, il démissionne dès la victoire du non, fidèle à sa conception du lien direct avec le peuple." }
+    ]
+  },
+
+  {
+    id: "anticolonialisme",
+    nom: "Anticolonialisme",
+    couleur: "#b5651d",
+    naissance: "Début du XXe siècle",
+    accroche: "Aucun peuple n’a le droit d’en dominer un autre.",
+    resume: "L’anticolonialisme rassemble les pensées et les luttes dirigées contre la domination des empires européens sur l’Afrique, l’Asie et les Amériques. Il réclame l’indépendance politique, mais analyse aussi ce que la colonisation fait aux esprits : racisme, mépris des cultures, dépendance économique. Après les indépendances, il se prolonge dans le tiers-mondisme et les études postcoloniales.",
+    idees: [
+      ["Autodétermination", "Chaque peuple a le droit de choisir librement son statut politique."],
+      ["Critique du racisme colonial", "La colonisation repose sur une hiérarchie des races qui déshumanise le colonisé et avilit le colonisateur."],
+      ["Décoloniser les esprits", "Se libérer suppose de retrouver l’estime de sa culture, de sa langue et de son histoire."],
+      ["Solidarité des peuples dominés", "Les pays d’Afrique, d’Asie et d’Amérique latine ont des intérêts communs face aux grandes puissances."],
+      ["Néocolonialisme", "L’indépendance formelle peut masquer une dépendance économique et militaire maintenue."]
+    ],
+    histoire: [
+      [1804, "Indépendance d’Haïti", "D’anciens esclaves fondent la première république noire après avoir vaincu l’armée de Napoléon."],
+      [1900, "Première Conférence panafricaine à Londres", "Des intellectuels noirs d’Afrique, des Antilles et des États-Unis réclament des droits pour les peuples colonisés."],
+      [1945, "Congrès panafricain de Manchester", "Nkrumah, Kenyatta et Du Bois y exigent l’indépendance immédiate de l’Afrique."],
+      [1954, "Bataille de Diên Biên Phu", "La défaite française en Indochine montre qu’une armée coloniale peut être vaincue."],
+      [1955, "Conférence de Bandung", "Vingt-neuf pays d’Asie et d’Afrique affirment leur refus du colonialisme et de l’alignement sur un bloc."],
+      [1957, "Indépendance du Ghana", "Premier pays d’Afrique subsaharienne à se libérer de la tutelle coloniale."],
+      [1962, "Indépendance de l’Algérie", "Elle met fin à huit ans de guerre et à cent trente-deux ans de présence française."],
+      [1994, "Fin de l’apartheid", "Nelson Mandela est élu président de l’Afrique du Sud lors des premières élections ouvertes à tous."]
+    ],
+    exemples: [
+      ["1791-1804", "La révolution haïtienne", "Saint-Domingue", "La seule révolte d’esclaves de l’histoire à avoir fondé un État."],
+      ["1954-1962", "La guerre d’Algérie", "Algérie", "Une indépendance arrachée par les armes, au prix de plusieurs centaines de milliers de morts."],
+      ["1957-1966", "Le Ghana de Nkrumah", "Ghana", "Laboratoire du panafricanisme, qui dérive vers le parti unique avant d’être renversé par un coup d’État."],
+      ["1948-1994", "La lutte contre l’apartheid", "Afrique du Sud", "Désobéissance civile, lutte armée, boycott international, puis transition négociée."]
+    ],
+    figures: [
+      ["Toussaint Louverture", "1743-1803", "Ancien esclave, chef de la révolution de Saint-Domingue, mort prisonnier en France."],
+      ["W. E. B. Du Bois", "1868-1963", "Sociologue afro-américain, père du panafricanisme."],
+      ["Hô Chi Minh", "1890-1969", "Fondateur du Parti communiste indochinois, il proclame l’indépendance du Vietnam en 1945."],
+      ["Kwame Nkrumah", "1909-1972", "Premier dirigeant du Ghana indépendant, champion de l’unité africaine."],
+      ["Aimé Césaire", "1913-2008", "Poète et député martiniquais, cofondateur de la négritude."],
+      ["Nelson Mandela", "1918-2013", "Emprisonné vingt-sept ans pour sa lutte contre l’apartheid, premier président noir d’Afrique du Sud."],
+      ["Frantz Fanon", "1925-1961", "Psychiatre martiniquais engagé aux côtés des indépendantistes algériens, analyste de l’aliénation coloniale."],
+      ["Patrice Lumumba", "1925-1961", "Premier chef du gouvernement du Congo indépendant, assassiné quelques mois après son arrivée au pouvoir."],
+      ["Edward Said", "1935-2003", "Universitaire palestino-américain, fondateur des études postcoloniales."]
+    ],
+    oeuvres: [
+      ["Discours sur le colonialisme", "Aimé Césaire", 1950],
+      ["Peau noire, masques blancs", "Frantz Fanon", 1952],
+      ["Portrait du colonisé", "Albert Memmi", 1957],
+      ["Les Damnés de la terre", "Frantz Fanon", 1961],
+      ["Le Néo-colonialisme, dernier stade de l’impérialisme", "Kwame Nkrumah", 1965],
+      ["L’Orientalisme", "Edward Said", 1978]
+    ],
+    courants: [
+      ["Panafricanisme", "Unité et solidarité des peuples africains et de leurs diasporas."],
+      ["Négritude", "Césaire, Senghor, Damas : affirmer la valeur des cultures noires contre le mépris colonial."],
+      ["Non-violence", "La désobéissance civile de masse, sur le modèle gandhien."],
+      ["Tiers-mondisme", "Les pays pauvres comme nouvelle force d’émancipation mondiale."],
+      ["Non-alignement", "Refus de choisir entre les blocs américain et soviétique (Nehru, Nasser, Tito)."],
+      ["Panarabisme", "Unir les peuples arabes par-delà les frontières tracées par les empires."],
+      ["Études postcoloniales", "Analyse de l’héritage colonial dans les savoirs, les représentations et les sociétés actuelles."]
+    ],
+    partis: {
+      hier: [
+        ["Viêt Minh", "Vietnam", "1941-1951", "Front de libération dirigé par les communistes, vainqueur de la France en 1954."],
+        ["Convention People’s Party", "Ghana", "1949-1966", "Le parti de Nkrumah, qui conduit le pays à l’indépendance."],
+        ["Rassemblement démocratique africain", "Afrique française", "fondé en 1946", "Fédération de partis des colonies françaises d’Afrique."]
+      ],
+      aujourdhui: [
+        ["Congrès national africain (ANC)", "Afrique du Sud", "depuis 1912", "Mouvement de libération devenu parti de gouvernement en 1994."],
+        ["SWAPO", "Namibie", "depuis 1960", "Mouvement de libération au pouvoir depuis l’indépendance de 1990."],
+        ["FLNKS", "Nouvelle-Calédonie", "depuis 1984", "Front indépendantiste kanak."],
+        ["Front Polisario", "Sahara occidental", "depuis 1973", "Il revendique l’indépendance du territoire."]
+      ]
+    },
+    critiques: [
+      "Beaucoup de régimes issus des indépendances sont devenus des dictatures à parti unique, au nom même de la libération.",
+      "La question de la violence divise : légitime et libératrice pour Fanon, à éviter pour Gandhi ou Camus.",
+      "Les universalistes reprochent à certaines pensées postcoloniales d’enfermer les individus dans des identités d’origine."
+    ],
+    proches: ["nationalisme", "socialisme", "communisme"],
+    quiz: [
+      { q: "Qu’affirment les pays réunis à Bandung en 1955 ?", r: ["Leur refus du colonialisme et de l’alignement sur un bloc", "Leur adhésion à l’OTAN", "La création d’une monnaie commune", "Leur soutien aux empires européens"], e: "Cette conférence afro-asiatique marque l’entrée du « tiers-monde » sur la scène internationale." },
+      { q: "Qu’est-ce que le néocolonialisme dénoncé par Kwame Nkrumah ?", r: ["Une indépendance de façade qui laisse le pays sous dépendance économique", "Le retour des armées coloniales", "La colonisation de l’espace", "Une alliance entre pays africains"], e: "Pour Nkrumah, un État peut avoir drapeau et hymne tout en étant dirigé de l’extérieur par les capitaux étrangers." },
+      { q: "Que désigne la négritude ?", r: ["Un mouvement affirmant la valeur des cultures et de l’identité noires", "Une politique de ségrégation", "Un parti politique sénégalais", "Une doctrine économique"], e: "Née dans le Paris des années 1930 autour de Césaire, Senghor et Damas, elle retourne un terme de mépris en fierté." },
+      { q: "Que soutient Frantz Fanon dans « Les Damnés de la terre » ?", r: ["La colonisation est une violence, que le colonisé ne brise qu’en se soulevant", "Les colonies doivent rester liées à leur métropole", "Seule la négociation permet l’indépendance", "Le racisme disparaîtra de lui-même"], e: "Écrit pendant la guerre d’Algérie, le livre analyse aussi les pièges qui guettent les nouveaux États indépendants." }
     ]
   }
 ];

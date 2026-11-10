@@ -233,7 +233,7 @@
         </section>
 
         <div class="cta">
-          <div><h3>Vous avez tout retenu ?</h3><p>Idées, dates, figures et œuvres du ${esc(d.nom.toLowerCase())} en quelques questions.</p></div>
+          <div><h3>Vous avez tout retenu ?</h3><p>Idées, dates, figures, œuvres et partis en quelques questions.</p></div>
           <a class="btn primary" href="#/quiz/${d.id}">Faire le quiz</a>
         </div>
 
