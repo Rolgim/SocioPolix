@@ -1,0 +1,737 @@
+/*
+ * SocioPolix — données des idéologies.
+ *
+ * Pour ajouter une idéologie, copier un bloc et le remplir :
+ *   idees    : [titre, explication]
+ *   histoire : [année (nombre), titre court, explication]
+ *   figures  : [nom, dates, description SANS citer le nom (sert aux quiz)]
+ *   oeuvres  : [titre, auteur, année]
+ *   courants : [nom, description]
+ *   proches  : ids d'idéologies voisines (jamais proposées comme mauvaises réponses)
+ *   quiz     : { q: question, r: [bonne réponse, 3 mauvaises], e: explication }
+ * Les quiz sur les dates, les auteurs et les figures sont générés automatiquement.
+ */
+window.IDEOLOGIES = [
+  {
+    id: "liberalisme",
+    nom: "Libéralisme",
+    couleur: "#d4a900",
+    naissance: "XVIIe – XVIIIe siècle",
+    accroche: "La liberté de l’individu comme point de départ de toute politique.",
+    resume: "Né de la contestation de l’absolutisme et des guerres de religion, le libéralisme affirme que les individus possèdent des droits que le pouvoir doit garantir et ne peut violer. Il défend l’État de droit, la limitation du pouvoir, la tolérance et, dans sa dimension économique, la propriété privée et le libre-échange.",
+    idees: [
+      ["Droits individuels", "Chaque personne dispose de droits (vie, liberté, propriété, conscience) antérieurs à l’État, que celui-ci a pour mission de protéger."],
+      ["Pouvoir limité", "Le pouvoir doit être encadré par une constitution, divisé entre plusieurs organes et soumis à la loi."],
+      ["Consentement des gouvernés", "Un gouvernement n’est légitime que s’il repose sur l’accord de ceux qu’il gouverne."],
+      ["Liberté économique", "La propriété privée, la concurrence et le libre-échange sont vus comme les moteurs de la prospérité."],
+      ["Tolérance et pluralisme", "L’État n’a pas à imposer une religion ni une conception unique de la vie bonne."]
+    ],
+    histoire: [
+      [1689, "Bill of Rights anglais et « Deux traités du gouvernement civil » de Locke", "Après la Glorieuse Révolution, le Parlement limite le pouvoir royal ; Locke théorise le gouvernement par consentement."],
+      [1748, "Parution de « De l’esprit des lois »", "Montesquieu y défend la séparation des pouvoirs législatif, exécutif et judiciaire."],
+      [1776, "Parution de « La Richesse des nations » et Déclaration d’indépendance américaine", "Adam Smith fonde l’économie politique libérale la même année que la naissance des États-Unis."],
+      [1789, "Déclaration des droits de l’homme et du citoyen", "La Révolution française proclame la liberté, l’égalité en droits et la souveraineté de la nation."],
+      [1859, "Parution de « De la liberté » de John Stuart Mill", "Mill formule le principe de non-nuisance : on ne peut contraindre un individu que pour empêcher un tort fait à autrui."],
+      [1947, "Fondation de la Société du Mont-Pèlerin", "Autour de Hayek, des intellectuels relancent le libéralisme face au planisme : c’est l’une des sources du néolibéralisme."],
+      [1971, "Parution de « Théorie de la justice » de John Rawls", "Rawls renouvelle le libéralisme en y intégrant une exigence forte de justice sociale."]
+    ],
+    figures: [
+      ["John Locke", "1632-1704", "Philosophe anglais, théoricien des droits naturels et du gouvernement fondé sur le consentement."],
+      ["Montesquieu", "1689-1755", "Philosophe français des Lumières, penseur de la séparation des pouvoirs."],
+      ["Adam Smith", "1723-1790", "Économiste et philosophe écossais, auteur de la métaphore de la « main invisible »."],
+      ["Benjamin Constant", "1767-1830", "Écrivain et homme politique franco-suisse, il distingue la liberté des Anciens de celle des Modernes."],
+      ["Alexis de Tocqueville", "1805-1859", "Penseur français qui analyse la démocratie américaine et met en garde contre la « tyrannie de la majorité »."],
+      ["John Stuart Mill", "1806-1873", "Philosophe britannique utilitariste, défenseur de la liberté d’expression et de l’égalité des sexes."],
+      ["Friedrich Hayek", "1899-1992", "Économiste austro-britannique, critique de la planification et prix Nobel d’économie en 1974."],
+      ["John Rawls", "1921-2002", "Philosophe américain, auteur du « voile d’ignorance » et d’un libéralisme égalitaire."]
+    ],
+    oeuvres: [
+      ["Deux traités du gouvernement civil", "John Locke", 1689],
+      ["De l’esprit des lois", "Montesquieu", 1748],
+      ["La Richesse des nations", "Adam Smith", 1776],
+      ["De la démocratie en Amérique", "Alexis de Tocqueville", 1835],
+      ["De la liberté", "John Stuart Mill", 1859],
+      ["La Route de la servitude", "Friedrich Hayek", 1944],
+      ["Théorie de la justice", "John Rawls", 1971]
+    ],
+    courants: [
+      ["Libéralisme classique", "Défense des libertés et d’un État limité à ses fonctions essentielles (XVIIIe-XIXe siècles)."],
+      ["Social-libéralisme", "Accepte l’intervention de l’État pour donner à chacun les moyens réels de sa liberté."],
+      ["Ordolibéralisme", "École allemande : l’État fixe et fait respecter les règles de la concurrence sans diriger l’économie."],
+      ["Néolibéralisme", "Renouveau du XXe siècle prônant dérégulation, privatisations et ouverture des marchés."]
+    ],
+    critiques: [
+      "Les socialistes lui reprochent de proclamer des libertés « formelles » sans donner à tous les moyens matériels de les exercer.",
+      "Les conservateurs et les communautariens l’accusent de dissoudre les liens sociaux dans l’individualisme.",
+      "Les politiques néolibérales sont critiquées pour le creusement des inégalités et l’instabilité financière."
+    ],
+    proches: ["libertarianisme", "social-democratie"],
+    quiz: [
+      { q: "Quel principe Montesquieu défend-il pour empêcher les abus de pouvoir ?", r: ["La séparation des pouvoirs", "La dictature du prolétariat", "Le droit divin des rois", "La démocratie directe permanente"], e: "Dans « De l’esprit des lois » (1748), Montesquieu soutient qu’il faut que « le pouvoir arrête le pouvoir »." },
+      { q: "Selon le « principe de non-nuisance » de John Stuart Mill, quand peut-on contraindre un individu ?", r: ["Pour empêcher qu’il nuise à autrui", "Pour son propre bien moral", "Dès que la majorité le souhaite", "Jamais, en aucune circonstance"], e: "Pour Mill, la seule raison légitime d’user de la force contre un individu est d’empêcher un tort fait aux autres." },
+      { q: "Que désigne la « main invisible » chez Adam Smith ?", r: ["Le fait que la recherche de l’intérêt personnel puisse servir l’intérêt général", "Le contrôle secret de l’État sur les prix", "L’influence de l’Église sur l’économie", "La solidarité spontanée entre ouvriers"], e: "Smith observe qu’en poursuivant son propre intérêt sur un marché, chacun contribue souvent, sans le vouloir, à la richesse de tous." },
+      { q: "Quelle expérience de pensée John Rawls propose-t-il pour définir une société juste ?", r: ["Le voile d’ignorance", "L’état de nature guerrier", "Le mythe de la caverne", "Le pari de Pascal"], e: "Rawls imagine des personnes choisissant les règles de la société sans savoir quelle place elles y occuperont." }
+    ]
+  },
+
+  {
+    id: "conservatisme",
+    nom: "Conservatisme",
+    couleur: "#1d4f91",
+    naissance: "Fin du XVIIIe siècle",
+    accroche: "Préserver ce que le temps a éprouvé, réformer avec prudence.",
+    resume: "Le conservatisme se forme en réaction à la Révolution française. Il se méfie des projets qui prétendent reconstruire la société à partir de principes abstraits et valorise la tradition, les institutions héritées, l’ordre et la continuité entre les générations. Il n’est pas hostile à tout changement, mais veut qu’il soit graduel.",
+    idees: [
+      ["Tradition", "Les coutumes et institutions héritées condensent l’expérience de générations ; elles méritent le respect avant d’être réformées."],
+      ["Prudence", "La société est trop complexe pour être refaite d’un coup : mieux vaut réformer peu à peu que révolutionner."],
+      ["Ordre et autorité", "Sans autorité légitime et sans ordre, il n’y a ni liberté durable ni sécurité."],
+      ["Corps intermédiaires", "Famille, religion, communautés locales et associations structurent la vie sociale mieux que l’État ou l’individu isolé."],
+      ["Scepticisme envers l’abstraction", "Les « droits de l’homme » en général comptent moins que les libertés concrètes d’un peuple et de son histoire."]
+    ],
+    histoire: [
+      [1790, "Parution des « Réflexions sur la Révolution de France »", "Edmund Burke y critique la table rase révolutionnaire : c’est le texte fondateur du conservatisme moderne."],
+      [1797, "Parution des « Considérations sur la France »", "Joseph de Maistre y interprète la Révolution comme un châtiment providentiel et fonde la pensée contre-révolutionnaire."],
+      [1815, "Congrès de Vienne", "Les monarchies européennes restaurent l’ordre ancien après la chute de Napoléon."],
+      [1818, "Chateaubriand fonde le journal « Le Conservateur »", "Le mot entre dans le vocabulaire politique."],
+      [1874, "Second gouvernement Disraeli au Royaume-Uni", "Il met en œuvre un conservatisme social (« one-nation ») soucieux de la condition ouvrière."],
+      [1953, "Parution de « The Conservative Mind » de Russell Kirk", "L’ouvrage donne une généalogie intellectuelle au conservatisme américain d’après-guerre."],
+      [1979, "Margaret Thatcher devient Première ministre", "Avec Ronald Reagan (élu en 1980), elle incarne l’alliance du conservatisme et du libéralisme économique."]
+    ],
+    figures: [
+      ["Edmund Burke", "1729-1797", "Député et penseur irlando-britannique, critique de la Révolution française et père du conservatisme moderne."],
+      ["Joseph de Maistre", "1753-1821", "Penseur savoyard contre-révolutionnaire, défenseur de la monarchie et de l’autorité du pape."],
+      ["François-René de Chateaubriand", "1768-1848", "Écrivain romantique et homme politique français, fondateur du journal qui donna son nom au courant."],
+      ["Benjamin Disraeli", "1804-1881", "Premier ministre britannique, promoteur d’un conservatisme social réconciliant les « deux nations », riches et pauvres."],
+      ["Michael Oakeshott", "1901-1990", "Philosophe britannique, critique du « rationalisme en politique »."],
+      ["Russell Kirk", "1918-1994", "Essayiste américain qui a redonné une tradition intellectuelle au conservatisme aux États-Unis."],
+      ["Margaret Thatcher", "1925-2013", "Première ministre britannique de 1979 à 1990, surnommée la « Dame de fer »."],
+      ["Roger Scruton", "1944-2020", "Philosophe britannique, défenseur contemporain de la tradition, de la beauté et de l’attachement au lieu."]
+    ],
+    oeuvres: [
+      ["Réflexions sur la Révolution de France", "Edmund Burke", 1790],
+      ["Considérations sur la France", "Joseph de Maistre", 1797],
+      ["Sybil ou les Deux Nations", "Benjamin Disraeli", 1845],
+      ["The Conservative Mind", "Russell Kirk", 1953],
+      ["Le Rationalisme en politique", "Michael Oakeshott", 1962]
+    ],
+    courants: [
+      ["Traditionalisme contre-révolutionnaire", "Rejet des principes de 1789, défense du trône et de l’autel (Maistre, Bonald)."],
+      ["Conservatisme libéral", "Associe défense des institutions traditionnelles et économie de marché."],
+      ["Néoconservatisme", "Courant américain de la fin du XXe siècle, favorable à une politique étrangère interventionniste."],
+      ["National-conservatisme", "Met l’accent sur la souveraineté nationale, l’identité culturelle et le contrôle de l’immigration."]
+    ],
+    critiques: [
+      "Ses adversaires lui reprochent de justifier les hiérarchies et les injustices existantes au nom de la tradition.",
+      "Il serait défini par ce qu’il refuse plus que par un projet : ce qu’il conserve change selon les époques et les pays.",
+      "L’alliance avec le libéralisme économique est jugée contradictoire, le marché bouleversant les traditions qu’il veut protéger."
+    ],
+    proches: ["democratie-chretienne", "nationalisme", "liberalisme"],
+    quiz: [
+      { q: "En réaction à quel événement le conservatisme moderne se constitue-t-il ?", r: ["La Révolution française", "La révolution d’Octobre", "La Réforme protestante", "La Première Guerre mondiale"], e: "Les « Réflexions » de Burke (1790) répondent directement aux événements de 1789." },
+      { q: "Que reproche Edmund Burke aux révolutionnaires français ?", r: ["De vouloir reconstruire la société à partir de principes abstraits", "D’être trop attachés à la monarchie", "De refuser le commerce avec l’Angleterre", "De ne pas aller assez loin dans l’égalité"], e: "Pour Burke, la société est un héritage à réformer prudemment, non une page blanche." },
+      { q: "Que désigne le conservatisme « one-nation » de Disraeli ?", r: ["Un conservatisme social voulant unir riches et pauvres", "Le refus de toute immigration", "L’union des couronnes d’Angleterre et d’Écosse", "Un projet d’empire mondial unique"], e: "Disraeli s’inquiétait de voir le pays divisé en « deux nations » et défendait des réformes sociales menées par les conservateurs." },
+      { q: "Quelle attitude face au changement caractérise le conservatisme ?", r: ["L’accepter s’il est graduel et prudent", "Le refuser en toutes circonstances", "L’accélérer par la révolution", "Le confier à des experts planificateurs"], e: "Burke lui-même écrivait qu’un État sans moyens de changer n’a pas les moyens de se conserver." }
+    ]
+  },
+
+  {
+    id: "socialisme",
+    nom: "Socialisme",
+    couleur: "#e0457b",
+    naissance: "Début du XIXe siècle",
+    accroche: "L’égalité réelle et la solidarité contre les injustices du capitalisme.",
+    resume: "Le socialisme naît avec la révolution industrielle et la misère ouvrière. Il critique un capitalisme qui concentre les richesses et propose d’organiser collectivement la production et la répartition. Très divers, il va des communautés idéales des premiers penseurs aux grands partis ouvriers, réformistes ou révolutionnaires.",
+    idees: [
+      ["Égalité sociale", "L’égalité devant la loi ne suffit pas : il faut réduire les inégalités réelles de conditions."],
+      ["Critique du capitalisme", "La propriété privée des moyens de production permet à une minorité de profiter du travail de la majorité."],
+      ["Propriété ou contrôle collectif", "Les grands moyens de production doivent appartenir à la collectivité ou être contrôlés par elle."],
+      ["Solidarité", "La coopération doit primer sur la concurrence ; la société est responsable de chacun de ses membres."],
+      ["Émancipation des travailleurs", "Les travailleurs doivent s’organiser (syndicats, partis, coopératives) pour conquérir leurs droits."]
+    ],
+    histoire: [
+      [1800, "Robert Owen prend la direction de la filature de New Lanark", "Il y expérimente une organisation plus humaine du travail : journée réduite, école, logements."],
+      [1839, "Parution de « Organisation du travail » de Louis Blanc", "Il y propose des « ateliers sociaux » soutenus par l’État."],
+      [1864, "Fondation de la Première Internationale à Londres", "L’Association internationale des travailleurs réunit socialistes, syndicalistes et anarchistes."],
+      [1889, "Fondation de la Deuxième Internationale à Paris", "Elle fédère les partis socialistes et fait du 1er mai une journée de revendication."],
+      [1905, "Création de la SFIO", "Les socialistes français s’unifient sous l’impulsion de Jean Jaurès et Jules Guesde."],
+      [1920, "Congrès de Tours", "La majorité rejoint l’Internationale communiste et fonde le futur PCF ; Léon Blum garde la « vieille maison » socialiste."],
+      [1936, "Victoire du Front populaire en France", "Le gouvernement Blum instaure les congés payés et la semaine de 40 heures."],
+      [1981, "François Mitterrand est élu président de la République", "Premier président socialiste de la Ve République : nationalisations, retraite à 60 ans, abolition de la peine de mort."]
+    ],
+    figures: [
+      ["Henri de Saint-Simon", "1760-1825", "Penseur français qui rêve d’une société dirigée par les « industriels » et les savants au profit du plus grand nombre."],
+      ["Robert Owen", "1771-1858", "Industriel gallois devenu réformateur, pionnier du mouvement coopératif."],
+      ["Charles Fourier", "1772-1837", "Penseur français, inventeur du phalanstère, communauté harmonieuse de travail et de vie."],
+      ["Pierre Leroux", "1797-1871", "Philosophe français qui popularise le mot « socialisme » dans les années 1830."],
+      ["Louis Blanc", "1811-1882", "Journaliste et homme politique français, membre du gouvernement provisoire de 1848 et défenseur du droit au travail."],
+      ["Jean Jaurès", "1859-1914", "Député du Tarn, fondateur de « L’Humanité », pacifiste assassiné à la veille de la Première Guerre mondiale."],
+      ["Léon Blum", "1872-1950", "Chef du gouvernement du Front populaire en 1936."],
+      ["François Mitterrand", "1916-1996", "Président de la République française de 1981 à 1995."]
+    ],
+    oeuvres: [
+      ["Théorie des quatre mouvements", "Charles Fourier", 1808],
+      ["Organisation du travail", "Louis Blanc", 1839],
+      ["L’Armée nouvelle", "Jean Jaurès", 1911],
+      ["À l’échelle humaine", "Léon Blum", 1945]
+    ],
+    courants: [
+      ["Socialisme utopique", "Premiers socialistes (Saint-Simon, Fourier, Owen) qui imaginent des communautés modèles."],
+      ["Socialisme démocratique", "Veut transformer la société par le suffrage universel et la loi."],
+      ["Socialisme autogestionnaire", "Confie la gestion des entreprises aux travailleurs eux-mêmes."],
+      ["Guesdisme", "Courant marxiste français de Jules Guesde, centré sur la lutte des classes et le parti ouvrier."]
+    ],
+    critiques: [
+      "Les libéraux lui reprochent de menacer la liberté individuelle et l’efficacité économique en étendant le rôle de l’État.",
+      "Les communistes ont accusé les socialistes réformistes de s’accommoder du capitalisme.",
+      "Au pouvoir, les partis socialistes ont souvent été critiqués par leur base pour leurs compromis avec l’économie de marché."
+    ],
+    proches: ["communisme", "social-democratie", "anarchisme"],
+    quiz: [
+      { q: "Dans quel contexte le socialisme apparaît-il ?", r: ["La révolution industrielle et la misère ouvrière", "Les guerres de Religion", "La décolonisation", "La crise pétrolière de 1973"], e: "Les premiers socialistes réagissent aux conditions de vie des ouvriers dans l’Europe industrielle du début du XIXe siècle." },
+      { q: "Qu’est-ce qu’un phalanstère, selon Charles Fourier ?", r: ["Une communauté de vie et de travail harmonieuse", "Un syndicat de métier", "Un parti politique clandestin", "Une banque coopérative"], e: "Fourier imagine des communautés d’environ 1 600 personnes où le travail serait choisi et attrayant." },
+      { q: "Quelles réformes sont associées au Front populaire de 1936 ?", r: ["Les congés payés et la semaine de 40 heures", "Le droit de vote des femmes", "La création de la Sécurité sociale", "La retraite à 60 ans"], e: "Les accords Matignon et les lois de juin 1936 instaurent deux semaines de congés payés et les 40 heures." },
+      { q: "Que se passe-t-il au congrès de Tours en 1920 ?", r: ["Le mouvement socialiste français se scinde entre socialistes et communistes", "Les syndicats adoptent la grève générale", "La SFIO fusionne avec les radicaux", "Jaurès est élu à la tête du parti"], e: "La majorité des délégués adhère à l’Internationale communiste ; la minorité, autour de Blum, maintient la SFIO." }
+    ]
+  },
+
+  {
+    id: "communisme",
+    nom: "Communisme",
+    couleur: "#c0281c",
+    naissance: "Milieu du XIXe siècle",
+    accroche: "Abolir les classes sociales par la mise en commun des moyens de production.",
+    resume: "Le communisme moderne s’appuie sur l’analyse de Marx et Engels : l’histoire est mue par la lutte des classes, et le capitalisme sera renversé par le prolétariat pour laisser place à une société sans classes ni propriété privée des moyens de production. Au XXe siècle, il devient l’idéologie officielle d’États à parti unique, de l’URSS à la Chine.",
+    idees: [
+      ["Lutte des classes", "L’histoire des sociétés est celle de l’affrontement entre classes dominantes et classes dominées."],
+      ["Matérialisme historique", "Ce sont les conditions économiques de production qui façonnent les institutions et les idées d’une époque."],
+      ["Abolition de la propriété privée des moyens de production", "Usines, terres et capitaux doivent devenir propriété commune."],
+      ["Société sans classes", "Le but final est une société d’abondance où l’État dépérit : « de chacun selon ses capacités, à chacun selon ses besoins »."],
+      ["Internationalisme", "Les travailleurs de tous les pays partagent les mêmes intérêts, par-delà les frontières."]
+    ],
+    histoire: [
+      [1848, "Parution du « Manifeste du parti communiste »", "Marx et Engels y appellent les prolétaires de tous les pays à s’unir."],
+      [1867, "Parution du livre I du « Capital »", "Marx y analyse le fonctionnement du capitalisme et l’exploitation du travail."],
+      [1871, "Commune de Paris", "Pendant 72 jours, Paris insurgé expérimente un gouvernement ouvrier ; Marx y voit un modèle."],
+      [1917, "Révolution d’Octobre en Russie", "Les bolcheviks de Lénine prennent le pouvoir à Petrograd."],
+      [1922, "Création de l’URSS", "Premier État se réclamant du communisme, bientôt dominé par Staline."],
+      [1949, "Proclamation de la République populaire de Chine", "Les communistes de Mao Zedong l’emportent au terme de la guerre civile."],
+      [1956, "Rapport Khrouchtchev", "Le dirigeant soviétique dénonce les crimes de Staline devant le XXe congrès du Parti."],
+      [1991, "Dissolution de l’URSS", "Deux ans après la chute du mur de Berlin, le bloc soviétique disparaît."]
+    ],
+    figures: [
+      ["Karl Marx", "1818-1883", "Philosophe et économiste allemand, théoricien de la lutte des classes et critique du capitalisme."],
+      ["Friedrich Engels", "1820-1895", "Fils d’industriel allemand, ami, mécène et coauteur du fondateur du marxisme."],
+      ["Lénine", "1870-1924", "Chef des bolcheviks et dirigeant de la révolution russe de 1917."],
+      ["Rosa Luxemburg", "1871-1919", "Révolutionnaire germano-polonaise, critique de l’autoritarisme bolchevik, assassinée à Berlin."],
+      ["Joseph Staline", "1878-1953", "Dirigeant de l’URSS de la fin des années 1920 à sa mort, responsable de la Grande Terreur."],
+      ["Léon Trotski", "1879-1940", "Organisateur de l’Armée rouge, théoricien de la « révolution permanente », assassiné en exil au Mexique."],
+      ["Antonio Gramsci", "1891-1937", "Dirigeant communiste italien emprisonné par le fascisme, penseur de l’« hégémonie culturelle »."],
+      ["Mao Zedong", "1893-1976", "Fondateur de la République populaire de Chine, qui fait de la paysannerie la force révolutionnaire."]
+    ],
+    oeuvres: [
+      ["Manifeste du parti communiste", "Karl Marx et Friedrich Engels", 1848],
+      ["Le Capital (livre I)", "Karl Marx", 1867],
+      ["Que faire ?", "Lénine", 1902],
+      ["L’Accumulation du capital", "Rosa Luxemburg", 1913],
+      ["Cahiers de prison", "Antonio Gramsci", 1929]
+    ],
+    courants: [
+      ["Marxisme-léninisme", "Un parti d’avant-garde discipliné conduit la révolution et exerce la « dictature du prolétariat »."],
+      ["Trotskisme", "Défend la révolution permanente et internationale contre la bureaucratie stalinienne."],
+      ["Maoïsme", "Adapte le marxisme aux sociétés paysannes et prône la mobilisation permanente des masses."],
+      ["Eurocommunisme", "Dans les années 1970, des partis d’Europe de l’Ouest prennent leurs distances avec Moscou et acceptent le pluralisme."]
+    ],
+    critiques: [
+      "Les régimes communistes du XXe siècle ont été des dictatures à parti unique, responsables de répressions de masse, de famines et de camps (Goulag, Grand Bond en avant, Khmers rouges).",
+      "Les libéraux, comme Hayek, soutiennent que la planification centrale ne peut ni coordonner l’économie ni coexister avec la liberté.",
+      "Anarchistes et socialistes démocratiques ont critiqué très tôt la confiscation du pouvoir par le parti."
+    ],
+    proches: ["socialisme", "anarchisme", "social-democratie"],
+    quiz: [
+      { q: "Selon Marx, quel est le moteur de l’histoire ?", r: ["La lutte des classes", "Le progrès des idées", "La volonté des grands hommes", "La concurrence entre nations"], e: "Le « Manifeste » s’ouvre sur cette thèse : l’histoire de toute société jusqu’à nos jours est l’histoire de luttes de classes." },
+      { q: "Quelle formule résume la société communiste achevée ?", r: ["De chacun selon ses capacités, à chacun selon ses besoins", "Liberté, égalité, fraternité", "Laissez faire, laissez passer", "Travail, famille, patrie"], e: "Marx emploie cette formule dans la « Critique du programme de Gotha » (1875)." },
+      { q: "Quelle notion Antonio Gramsci a-t-il développée ?", r: ["L’hégémonie culturelle", "La révolution permanente", "La main invisible", "Le voile d’ignorance"], e: "Pour Gramsci, une classe domine aussi en faisant accepter ses idées comme le « bon sens » de toute la société." },
+      { q: "Que désigne le prolétariat chez Marx ?", r: ["Ceux qui ne possèdent que leur force de travail", "Les paysans propriétaires de leur terre", "Les petits commerçants", "Les fonctionnaires de l’État"], e: "Le prolétaire, ne possédant pas de moyens de production, doit vendre son travail à la bourgeoisie pour vivre." }
+    ]
+  },
+
+  {
+    id: "anarchisme",
+    nom: "Anarchisme",
+    couleur: "#6e6a75",
+    naissance: "Milieu du XIXe siècle",
+    accroche: "L’ordre sans le pouvoir : ni dieu, ni maître, ni État.",
+    resume: "L’anarchisme refuse toute domination, à commencer par celle de l’État, mais aussi celles du capital et de l’Église. Loin de prôner le chaos, il imagine une société organisée par la libre association, l’autogestion et le fédéralisme. Il s’oppose aux marxistes sur un point décisif : on ne libère pas la société en s’emparant de l’État.",
+    idees: [
+      ["Refus de l’État", "L’État, même révolutionnaire, est une machine de domination qu’il faut abolir et non conquérir."],
+      ["Autogestion", "Les producteurs et les habitants gèrent eux-mêmes, directement, leurs affaires communes."],
+      ["Fédéralisme", "Les communes et associations libres se coordonnent de bas en haut, sans pouvoir central."],
+      ["Entraide", "La coopération est un facteur de l’évolution aussi important que la compétition."],
+      ["Action directe", "Agir soi-même (grève, boycott, occupation) plutôt que déléguer à des représentants."]
+    ],
+    histoire: [
+      [1840, "Parution de « Qu’est-ce que la propriété ? »", "Proudhon y répond : « c’est le vol » et se déclare anarchiste, donnant au mot un sens positif."],
+      [1872, "Congrès de La Haye : rupture entre Marx et Bakounine", "Les anarchistes sont exclus de la Première Internationale et fondent leur propre organisation à Saint-Imier."],
+      [1892, "Parution de « La Conquête du pain »", "Kropotkine y expose le communisme libertaire."],
+      [1906, "Charte d’Amiens", "La CGT affirme l’indépendance du syndicalisme vis-à-vis des partis, sous l’influence des anarcho-syndicalistes."],
+      [1910, "Fondation de la CNT en Espagne", "La confédération anarcho-syndicaliste devient une organisation de masse."],
+      [1918, "Début de la Makhnovchtchina en Ukraine", "L’armée paysanne de Nestor Makhno défend des communes libres avant d’être écrasée par l’Armée rouge."],
+      [1936, "Révolution sociale en Espagne", "En Catalogne et en Aragon, usines et terres sont collectivisées par les travailleurs pendant la guerre civile."]
+    ],
+    figures: [
+      ["Pierre-Joseph Proudhon", "1809-1865", "Ouvrier typographe français, premier à se dire anarchiste, théoricien du mutuellisme et du fédéralisme."],
+      ["Mikhaïl Bakounine", "1814-1876", "Révolutionnaire russe, grand rival de Marx au sein de la Première Internationale."],
+      ["Louise Michel", "1830-1905", "Institutrice et figure de la Commune de Paris, déportée en Nouvelle-Calédonie."],
+      ["Pierre Kropotkine", "1842-1921", "Prince russe et géographe, théoricien de l’entraide et du communisme libertaire."],
+      ["Errico Malatesta", "1853-1932", "Militant italien infatigable, propagandiste de l’insurrection et de l’organisation libertaire."],
+      ["Emma Goldman", "1869-1940", "Militante née en Lituanie et active aux États-Unis, pionnière de l’anarcha-féminisme."],
+      ["Nestor Makhno", "1888-1934", "Paysan ukrainien, chef d’une armée insurrectionnelle libertaire pendant la guerre civile russe."]
+    ],
+    oeuvres: [
+      ["Qu’est-ce que la propriété ?", "Pierre-Joseph Proudhon", 1840],
+      ["L’Unique et sa propriété", "Max Stirner", 1844],
+      ["Étatisme et anarchie", "Mikhaïl Bakounine", 1873],
+      ["La Conquête du pain", "Pierre Kropotkine", 1892],
+      ["L’Entraide, un facteur de l’évolution", "Pierre Kropotkine", 1902]
+    ],
+    courants: [
+      ["Mutuellisme", "Échange équitable entre producteurs indépendants, crédit gratuit (Proudhon)."],
+      ["Communisme libertaire", "Mise en commun des biens sans État ni salariat (Kropotkine)."],
+      ["Anarcho-syndicalisme", "Le syndicat est à la fois l’outil de la lutte et la base de la société future."],
+      ["Anarchisme individualiste", "Primat absolu de l’autonomie de l’individu sur toute organisation (Stirner)."]
+    ],
+    critiques: [
+      "Ses adversaires jugent irréaliste une société complexe sans État pour arbitrer les conflits et assurer la sécurité.",
+      "Les marxistes lui reprochent de désarmer la révolution en refusant de prendre le pouvoir.",
+      "La « propagande par le fait » (attentats des années 1890) a durablement associé l’anarchisme à la violence."
+    ],
+    proches: ["socialisme", "communisme", "libertarianisme"],
+    quiz: [
+      { q: "Quelle réponse célèbre Proudhon donne-t-il à la question « Qu’est-ce que la propriété ? »", r: ["C’est le vol", "C’est la liberté", "C’est un droit sacré", "C’est le fruit du travail"], e: "Proudhon vise la propriété qui permet de vivre du travail d’autrui, non la possession personnelle." },
+      { q: "Sur quoi porte le désaccord central entre Bakounine et Marx ?", r: ["Le rôle de l’État dans la révolution", "L’existence des classes sociales", "La nécessité d’abolir le capitalisme", "Le droit de grève"], e: "Marx veut que le prolétariat s’empare de l’État ; Bakounine veut le détruire, redoutant une « bureaucratie rouge »." },
+      { q: "Quelle thèse Kropotkine défend-il dans « L’Entraide » ?", r: ["La coopération est un facteur majeur de l’évolution", "La lutte de tous contre tous est naturelle", "Seul l’État peut créer la solidarité", "Les espèces n’évoluent pas"], e: "En géographe et naturaliste, Kropotkine répond au darwinisme social en montrant le rôle de l’entraide chez les animaux et les humains." },
+      { q: "Qu’est-ce que l’« action directe » ?", r: ["Agir soi-même, sans intermédiaire ni représentant", "Voter à chaque élection", "Créer un parti d’avant-garde", "Négocier avec le gouvernement"], e: "Grève, boycott ou occupation : les intéressés agissent eux-mêmes plutôt que de déléguer à des élus." }
+    ]
+  },
+
+  {
+    id: "social-democratie",
+    nom: "Social-démocratie",
+    couleur: "#f0704a",
+    naissance: "Fin du XIXe siècle",
+    accroche: "Réformer le capitalisme par la démocratie plutôt que le renverser.",
+    resume: "Issue du mouvement ouvrier marxiste, la social-démocratie abandonne peu à peu l’idée de révolution : c’est par les élections, la loi et la négociation entre syndicats et patronat que l’on améliore le sort des travailleurs. Après 1945, elle bâtit en Europe l’État-providence et l’économie mixte.",
+    idees: [
+      ["Réformisme", "Le progrès social s’obtient par étapes, dans le cadre de la démocratie parlementaire."],
+      ["État-providence", "La collectivité protège chacun contre la maladie, le chômage, la vieillesse et la pauvreté."],
+      ["Économie mixte", "Le marché est accepté, mais régulé et complété par des services publics."],
+      ["Dialogue social", "Syndicats puissants et patronat négocient salaires et conditions de travail."],
+      ["Redistribution", "L’impôt progressif finance les services publics et réduit les inégalités."]
+    ],
+    histoire: [
+      [1875, "Congrès de Gotha", "Les socialistes allemands s’unissent dans le parti qui deviendra le SPD."],
+      [1899, "Parution des « Présupposés du socialisme » de Bernstein", "Il propose de « réviser » Marx : le capitalisme ne s’effondre pas, il faut le réformer."],
+      [1932, "Les sociaux-démocrates suédois arrivent durablement au pouvoir", "Ils gouverneront presque sans interruption jusqu’en 1976 et construiront le « foyer du peuple »."],
+      [1938, "Accords de Saltsjöbaden en Suède", "Syndicats et patronat s’engagent à régler leurs conflits par la négociation."],
+      [1945, "Gouvernement travailliste de Clement Attlee", "Il nationalise des secteurs clés et crée le service national de santé (NHS)."],
+      [1959, "Congrès de Bad Godesberg", "Le SPD renonce officiellement au marxisme et accepte l’économie de marché."],
+      [1969, "Willy Brandt devient chancelier d’Allemagne fédérale", "Il lance l’Ostpolitik, politique de détente avec l’Est."],
+      [1997, "Tony Blair devient Premier ministre britannique", "Son « New Labour » incarne la « troisième voie » entre social-démocratie classique et libéralisme."]
+    ],
+    figures: [
+      ["Eduard Bernstein", "1850-1932", "Théoricien allemand du « révisionnisme », pour qui « le mouvement est tout, le but final n’est rien »."],
+      ["Hjalmar Branting", "1860-1925", "Premier chef de gouvernement social-démocrate de Suède, prix Nobel de la paix en 1921."],
+      ["Clement Attlee", "1883-1967", "Premier ministre travailliste britannique de 1945 à 1951, bâtisseur de l’État-providence d’après-guerre."],
+      ["Willy Brandt", "1913-1992", "Chancelier ouest-allemand, prix Nobel de la paix en 1971 pour sa politique de détente."],
+      ["Olof Palme", "1927-1986", "Premier ministre suédois, voix du tiers-mondisme et du désarmement, assassiné à Stockholm."],
+      ["Tony Blair", "né en 1953", "Premier ministre britannique de 1997 à 2007, promoteur de la « troisième voie »."]
+    ],
+    oeuvres: [
+      ["Les Présupposés du socialisme", "Eduard Bernstein", 1899],
+      ["The Future of Socialism", "Anthony Crosland", 1956],
+      ["La Troisième Voie", "Anthony Giddens", 1998]
+    ],
+    courants: [
+      ["Révisionnisme", "Révision du marxisme par Bernstein : évolution graduelle plutôt que révolution."],
+      ["Modèle nordique", "Impôts élevés, protection sociale universelle et négociation collective généralisée."],
+      ["Travaillisme", "Tradition britannique née des syndicats plutôt que du marxisme."],
+      ["Troisième voie", "Dans les années 1990, synthèse avec le libéralisme économique (Blair, Schröder)."]
+    ],
+    critiques: [
+      "La gauche radicale lui reproche d’avoir renoncé à dépasser le capitalisme et de se contenter de l’aménager.",
+      "Les libéraux critiquent le poids des impôts et de la dépense publique.",
+      "La « troisième voie » est accusée d’avoir éloigné ces partis de leur électorat populaire."
+    ],
+    proches: ["socialisme", "communisme", "liberalisme"],
+    quiz: [
+      { q: "Qu’est-ce qui distingue la social-démocratie du communisme ?", r: ["Elle choisit la réforme démocratique plutôt que la révolution", "Elle refuse toute intervention de l’État", "Elle rejette les syndicats", "Elle défend le parti unique"], e: "La social-démocratie veut transformer la société par les élections, la loi et la négociation." },
+      { q: "Quel tournant le SPD prend-il à Bad Godesberg en 1959 ?", r: ["Il abandonne la référence au marxisme", "Il fusionne avec le parti communiste", "Il renonce à participer aux élections", "Il adopte un programme écologiste"], e: "Le programme de Bad Godesberg accepte l’économie de marché : « la concurrence autant que possible, la planification autant que nécessaire »." },
+      { q: "Quelle institution britannique le gouvernement Attlee crée-t-il en 1948 ?", r: ["Le service national de santé (NHS)", "La BBC", "La Banque d’Angleterre", "Le Parlement écossais"], e: "Le NHS offre des soins gratuits à tous, financés par l’impôt." },
+      { q: "Que soutenait Eduard Bernstein, père du « révisionnisme » ?", r: ["Le capitalisme ne s’effondrera pas de lui-même : il faut le réformer pas à pas", "La révolution armée est imminente", "Il faut abolir l’État immédiatement", "Les syndicats sont inutiles"], e: "Bernstein constatait que la condition ouvrière s’améliorait et que les prédictions d’effondrement ne se réalisaient pas." }
+    ]
+  },
+
+  {
+    id: "fascisme",
+    nom: "Fascisme",
+    couleur: "#7a5c43",
+    naissance: "Années 1920",
+    accroche: "La nation totale, le chef et la violence contre la démocratie.",
+    resume: "Né en Italie au lendemain de la Première Guerre mondiale, le fascisme est un nationalisme radical qui veut fondre l’individu dans une nation unie derrière un chef, encadrée par un parti unique et mobilisée en permanence. Il rejette à la fois la démocratie libérale et le marxisme. Sa variante allemande, le nazisme, y ajoute un racisme biologique et un antisémitisme exterminateur. Étudier le fascisme, c’est comprendre comment il a conduit à la guerre et au génocide.",
+    idees: [
+      ["Ultranationalisme", "La nation, conçue comme un corps organique, est la valeur suprême ; elle doit renaître et s’étendre."],
+      ["Culte du chef", "Un guide (Duce, Führer) incarne la volonté du peuple et ne rend de comptes à personne."],
+      ["État totalitaire", "« Tout dans l’État, rien hors de l’État, rien contre l’État » : parti unique, propagande, embrigadement."],
+      ["Rejet de la démocratie et du marxisme", "Le pluralisme, le parlementarisme et la lutte des classes sont vus comme des facteurs de division."],
+      ["Exaltation de la violence", "La guerre et la force sont glorifiées comme régénératrices ; les opposants sont éliminés."],
+      ["Corporatisme", "Patrons et ouvriers sont réunis de force dans des corporations contrôlées par l’État."]
+    ],
+    histoire: [
+      [1919, "Mussolini fonde les Faisceaux italiens de combat à Milan", "Anciens combattants et nationalistes forment des milices, les « chemises noires »."],
+      [1922, "Marche sur Rome", "Sous la pression des fascistes, le roi nomme Mussolini chef du gouvernement."],
+      [1925, "Mussolini instaure la dictature", "Après l’assassinat du député Matteotti, les libertés et les partis d’opposition sont supprimés."],
+      [1933, "Hitler devient chancelier d’Allemagne", "En quelques mois, les nazis détruisent la république de Weimar."],
+      [1935, "Lois de Nuremberg", "L’Allemagne nazie prive les Juifs de leur citoyenneté et interdit les mariages « mixtes »."],
+      [1939, "Début de la Seconde Guerre mondiale", "L’invasion de la Pologne ouvre un conflit qui fera plusieurs dizaines de millions de morts, dont six millions de Juifs assassinés."],
+      [1945, "Chute des régimes fasciste et nazi", "Mussolini est exécuté par des partisans, Hitler se suicide ; le procès de Nuremberg juge les dirigeants nazis."]
+    ],
+    figures: [
+      ["Benito Mussolini", "1883-1945", "Ancien socialiste italien devenu fondateur du fascisme et dictateur, surnommé le « Duce »."],
+      ["Giovanni Gentile", "1875-1944", "Philosophe italien, principal théoricien du régime fasciste et de l’« État éthique »."],
+      ["Adolf Hitler", "1889-1945", "Dictateur de l’Allemagne nazie, responsable de la Seconde Guerre mondiale en Europe et de la Shoah."],
+      ["José Antonio Primo de Rivera", "1903-1936", "Fondateur de la Phalange espagnole en 1933."],
+      ["Oswald Mosley", "1896-1980", "Fondateur de l’Union britannique des fascistes en 1932."]
+    ],
+    oeuvres: [
+      ["La Doctrine du fascisme", "Benito Mussolini et Giovanni Gentile", 1932],
+      ["Les Origines du totalitarisme (analyse critique)", "Hannah Arendt", 1951],
+      ["Reconnaître le fascisme (analyse critique)", "Umberto Eco", 1995],
+      ["Le Fascisme en action (analyse historique)", "Robert Paxton", 2004]
+    ],
+    courants: [
+      ["Fascisme italien", "Le modèle d’origine : État total, parti unique, corporatisme."],
+      ["National-socialisme (nazisme)", "Variante allemande fondée sur le racisme biologique, l’antisémitisme et la conquête d’un « espace vital »."],
+      ["Phalangisme", "Variante espagnole, mêlant nationalisme, catholicisme et syndicalisme d’État."],
+      ["Néofascisme", "Mouvements d’après 1945 qui se réclament de cet héritage ou en reprennent les thèmes."]
+    ],
+    critiques: [
+      "Le fascisme a conduit à la suppression des libertés, à la guerre d’agression et, avec le nazisme, au génocide des Juifs et des Roms d’Europe.",
+      "Les historiens débattent de sa définition : pour certains (Paxton), il se reconnaît à ses actes plus qu’à sa doctrine ; d’autres discutent de l’extension du terme à des régimes autoritaires comme celui de Franco.",
+      "L’usage du mot comme simple insulte politique tend à en brouiller le sens historique."
+    ],
+    proches: ["nationalisme", "conservatisme"],
+    quiz: [
+      { q: "Dans quel pays et à quelle période le fascisme naît-il ?", r: ["En Italie, après la Première Guerre mondiale", "En Allemagne, après 1870", "En Espagne, pendant la guerre civile", "En France, pendant l’affaire Dreyfus"], e: "Mussolini fonde les Faisceaux de combat à Milan en 1919 et prend le pouvoir en 1922." },
+      { q: "Quelle formule de Mussolini résume l’ambition totalitaire du fascisme ?", r: ["Tout dans l’État, rien hors de l’État, rien contre l’État", "L’État, c’est moi", "Moins d’État, plus de liberté", "L’État dépérira de lui-même"], e: "L’État fasciste prétend encadrer tous les aspects de la vie : travail, loisirs, jeunesse, culture." },
+      { q: "Qu’est-ce qui distingue le nazisme du fascisme italien d’origine ?", r: ["Le racisme biologique et l’antisémitisme placés au cœur de la doctrine", "Le refus du parti unique", "L’attachement à la démocratie parlementaire", "Le pacifisme"], e: "Le nazisme fait de la « race » le principe central de sa vision du monde, ce qui mène à la Shoah." },
+      { q: "À quelles idéologies le fascisme s’oppose-t-il simultanément ?", r: ["Au libéralisme démocratique et au marxisme", "Au nationalisme et au militarisme", "Uniquement au conservatisme", "Uniquement à l’anarchisme"], e: "Il se présente comme une « troisième voie » contre la démocratie parlementaire et contre la lutte des classes." }
+    ]
+  },
+
+  {
+    id: "nationalisme",
+    nom: "Nationalisme",
+    couleur: "#4b3fa8",
+    naissance: "XIXe siècle",
+    accroche: "À chaque nation son État, à chaque peuple le droit de se gouverner.",
+    resume: "Le nationalisme fait de la nation la communauté politique fondamentale : elle doit disposer de son propre État et sa souveraineté prime. Il a servi des causes très différentes : unification de l’Italie et de l’Allemagne, émancipation des peuples colonisés, mais aussi exclusion des minorités et guerres de conquête.",
+    idees: [
+      ["Primat de la nation", "La loyauté envers la nation passe avant les appartenances de classe, de région ou de religion."],
+      ["Souveraineté nationale", "La nation doit se gouverner elle-même, sans dépendre d’une puissance extérieure."],
+      ["Droit des peuples à disposer d’eux-mêmes", "Chaque peuple a vocation à former son propre État."],
+      ["Identité commune", "Langue, histoire, culture ou volonté de vivre ensemble fondent le sentiment national."],
+      ["Unité", "Les divisions internes doivent s’effacer devant l’intérêt national."]
+    ],
+    histoire: [
+      [1808, "Fichte prononce ses « Discours à la nation allemande »", "Dans Berlin occupé par Napoléon, il appelle au réveil national par la langue et l’éducation."],
+      [1831, "Mazzini fonde Jeune Italie", "Le mouvement veut une Italie unie, républicaine et indépendante."],
+      [1861, "Proclamation du royaume d’Italie", "L’unité italienne aboutit après les campagnes de Cavour et de Garibaldi."],
+      [1882, "Conférence de Renan « Qu’est-ce qu’une nation ? »", "Il définit la nation comme un « plébiscite de tous les jours », fondé sur la volonté et non sur la race."],
+      [1899, "Charles Maurras rejoint l’Action française", "Il en fait le foyer du « nationalisme intégral », monarchiste et antisémite."],
+      [1918, "Quatorze points du président Wilson", "Le droit des peuples à disposer d’eux-mêmes devient un principe de la paix d’après-guerre."],
+      [1947, "Indépendance de l’Inde", "Le mouvement national mené par Gandhi et Nehru met fin à la domination britannique."],
+      [1960, "« Année de l’Afrique »", "Dix-sept pays africains accèdent à l’indépendance."]
+    ],
+    figures: [
+      ["Johann Gottfried Herder", "1744-1803", "Philosophe allemand pour qui chaque peuple possède un génie propre exprimé par sa langue."],
+      ["Johann Gottlieb Fichte", "1762-1814", "Philosophe allemand qui appelle au sursaut national face à l’occupation napoléonienne."],
+      ["Giuseppe Mazzini", "1805-1872", "Révolutionnaire génois, apôtre de l’unité italienne et d’une Europe des peuples."],
+      ["Giuseppe Garibaldi", "1807-1882", "Chef militaire de l’expédition des Mille, héros de l’unification italienne."],
+      ["Ernest Renan", "1823-1892", "Historien français qui définit la nation par la volonté de vivre ensemble."],
+      ["Maurice Barrès", "1862-1923", "Écrivain français, chantre de « la terre et les morts »."],
+      ["Charles Maurras", "1868-1952", "Théoricien français du « nationalisme intégral » et dirigeant de l’Action française."],
+      ["Mohandas Gandhi", "1869-1948", "Dirigeant du mouvement d’indépendance de l’Inde par la non-violence."]
+    ],
+    oeuvres: [
+      ["Discours à la nation allemande", "Johann Gottlieb Fichte", 1808],
+      ["Qu’est-ce qu’une nation ?", "Ernest Renan", 1882],
+      ["Les Déracinés", "Maurice Barrès", 1897],
+      ["L’Imaginaire national (analyse)", "Benedict Anderson", 1983],
+      ["Nations et nationalisme (analyse)", "Ernest Gellner", 1983]
+    ],
+    courants: [
+      ["Nationalisme civique", "La nation est une communauté de citoyens unis par des institutions et une volonté commune."],
+      ["Nationalisme ethnique", "La nation est définie par l’ascendance, la langue ou la culture héritées."],
+      ["Nationalisme de libération", "Lutte d’un peuple dominé ou colonisé pour son indépendance."],
+      ["Nationalisme intégral", "Doctrine de Maurras : la nation avant tout, contre la république et les « étrangers de l’intérieur »."]
+    ],
+    critiques: [
+      "Poussé à l’extrême, il nourrit la xénophobie, l’exclusion des minorités et les guerres, comme l’ont montré les deux conflits mondiaux.",
+      "Des historiens (Anderson, Gellner, Hobsbawm) soulignent que les nations sont des constructions récentes et non des réalités éternelles.",
+      "Internationalistes et fédéralistes lui reprochent de faire obstacle à la coopération entre les peuples."
+    ],
+    proches: ["fascisme", "conservatisme"],
+    quiz: [
+      { q: "Comment Ernest Renan définit-il la nation ?", r: ["Comme un « plébiscite de tous les jours »", "Comme une race pure", "Comme un territoire délimité par des frontières naturelles", "Comme l’ensemble des sujets d’un même roi"], e: "Pour Renan, la nation repose sur un passé partagé et surtout sur la volonté actuelle de vivre ensemble." },
+      { q: "Quelle différence y a-t-il entre nationalisme civique et nationalisme ethnique ?", r: ["Le premier se fonde sur la volonté et les institutions, le second sur l’ascendance et la culture héritée", "Le premier est monarchiste, le second républicain", "Le premier est européen, le second américain", "Il n’y en a aucune"], e: "On oppose souvent la conception « française » (Renan) à la conception « allemande » (Herder, Fichte), même si la réalité est plus nuancée." },
+      { q: "Quel principe le président Wilson promeut-il en 1918 ?", r: ["Le droit des peuples à disposer d’eux-mêmes", "Le retour aux empires", "La dictature du prolétariat", "Le protectionnisme généralisé"], e: "Ses Quatorze points inspirent le redécoupage de l’Europe après la Première Guerre mondiale." },
+      { q: "Quels États naissent des mouvements nationaux du XIXe siècle ?", r: ["L’Italie et l’Allemagne unifiées", "La France et l’Angleterre", "L’URSS et la Chine populaire", "L’Inde et le Pakistan"], e: "Le royaume d’Italie est proclamé en 1861 et l’Empire allemand en 1871." }
+    ]
+  },
+
+  {
+    id: "ecologie",
+    nom: "Écologie politique",
+    couleur: "#2e9e4f",
+    naissance: "Années 1960-1970",
+    accroche: "Une planète finie ne peut supporter une croissance infinie.",
+    resume: "L’écologie politique part d’un constat scientifique — la dégradation des écosystèmes et les limites des ressources — pour en tirer un projet de société. Elle remet en cause le productivisme, commun au capitalisme et au socialisme industriel, et défend la sobriété, la responsabilité envers les générations futures et une démocratie plus locale.",
+    idees: [
+      ["Limites planétaires", "Les ressources et la capacité de la Terre à absorber nos pollutions sont finies."],
+      ["Critique du productivisme", "Produire et consommer toujours plus n’est ni possible ni souhaitable."],
+      ["Responsabilité envers les générations futures", "Nos choix ne doivent pas compromettre la vie de ceux qui viendront après nous."],
+      ["Principe de précaution", "Face à un risque grave et irréversible, l’incertitude scientifique ne justifie pas l’inaction."],
+      ["Démocratie de proximité", "Décentralisation, participation citoyenne et autonomie locale."]
+    ],
+    histoire: [
+      [1962, "Parution de « Printemps silencieux »", "Rachel Carson révèle les ravages des pesticides ; le livre lance le mouvement écologiste moderne."],
+      [1970, "Premier Jour de la Terre", "Vingt millions d’Américains manifestent pour l’environnement."],
+      [1972, "Rapport Meadows « Les Limites à la croissance »", "Commandé par le Club de Rome, il modélise l’épuisement des ressources. La même année se tient la conférence de l’ONU à Stockholm."],
+      [1974, "Candidature de René Dumont à l’élection présidentielle française", "Premier candidat écologiste, il boit un verre d’eau à la télévision pour alerter sur sa rareté future."],
+      [1980, "Fondation des Verts allemands (Die Grünen)", "Ils entrent au Bundestag dès 1983."],
+      [1987, "Rapport Brundtland", "Il définit le « développement durable »."],
+      [1988, "Création du GIEC", "Le groupe d’experts de l’ONU sur le climat est chargé de synthétiser les connaissances scientifiques."],
+      [1992, "Sommet de la Terre à Rio", "Adoption des conventions sur le climat et la biodiversité."],
+      [2015, "Accord de Paris sur le climat", "Les États s’engagent à contenir le réchauffement nettement sous 2 °C."]
+    ],
+    figures: [
+      ["Rachel Carson", "1907-1964", "Biologiste marine américaine dont le livre sur les pesticides a éveillé la conscience écologique."],
+      ["René Dumont", "1904-2001", "Agronome français, premier candidat écologiste à une élection présidentielle."],
+      ["Hans Jonas", "1903-1993", "Philosophe allemand, penseur de la responsabilité envers les générations futures."],
+      ["Arne Næss", "1912-2009", "Philosophe norvégien, fondateur de l’« écologie profonde »."],
+      ["Murray Bookchin", "1921-2006", "Penseur américain de l’écologie sociale et du municipalisme libertaire."],
+      ["André Gorz", "1923-2007", "Philosophe français d’origine autrichienne, pionnier de l’écosocialisme et de la décroissance."],
+      ["Ivan Illich", "1926-2002", "Penseur d’origine autrichienne, critique de la société industrielle et théoricien de la convivialité."],
+      ["Wangari Maathai", "1940-2011", "Biologiste kényane, fondatrice du Mouvement de la ceinture verte, prix Nobel de la paix en 2004."],
+      ["Petra Kelly", "1947-1992", "Cofondatrice des Verts allemands, militante pacifiste."]
+    ],
+    oeuvres: [
+      ["Printemps silencieux", "Rachel Carson", 1962],
+      ["Les Limites à la croissance", "Donella Meadows et son équipe", 1972],
+      ["La Convivialité", "Ivan Illich", 1973],
+      ["Écologie et politique", "André Gorz", 1975],
+      ["Le Principe responsabilité", "Hans Jonas", 1979]
+    ],
+    courants: [
+      ["Environnementalisme", "Protéger la nature et corriger les pollutions sans bouleverser le système économique."],
+      ["Écologie profonde", "La nature a une valeur en elle-même, indépendamment de son utilité pour l’humanité."],
+      ["Écosocialisme", "Crise écologique et crise sociale ont la même cause : le capitalisme."],
+      ["Décroissance", "Réduire volontairement la production et la consommation dans les pays riches."]
+    ],
+    critiques: [
+      "Ses adversaires lui reprochent de menacer l’emploi et le niveau de vie, ou de proposer une écologie « punitive ».",
+      "Les partisans de la croissance verte estiment que l’innovation technique permettra de découpler richesse et pollution.",
+      "Le mouvement est divisé sur la stratégie : réformer le capitalisme ou en sortir, nucléaire ou non, participation au pouvoir ou radicalité."
+    ],
+    proches: [],
+    quiz: [
+      { q: "Quel livre de 1962 est considéré comme le point de départ du mouvement écologiste moderne ?", r: ["Printemps silencieux", "Le Capital", "Le Principe responsabilité", "Les Limites à la croissance"], e: "Rachel Carson y montre les effets des pesticides, notamment le DDT, sur les oiseaux et toute la chaîne du vivant." },
+      { q: "Que désigne le « productivisme » critiqué par les écologistes ?", r: ["La recherche d’une augmentation sans fin de la production", "Le travail à la chaîne uniquement", "L’agriculture biologique", "La propriété privée"], e: "Les écologistes reprochent cette logique aussi bien au capitalisme qu’aux régimes socialistes industriels." },
+      { q: "Quel impératif Hans Jonas formule-t-il dans « Le Principe responsabilité » ?", r: ["Agir de façon à préserver la possibilité d’une vie humaine future sur Terre", "Maximiser le bonheur du plus grand nombre aujourd’hui", "Obéir aux lois de son pays", "Ne jamais intervenir sur la nature"], e: "Parce que la technique donne à l’humanité le pouvoir de se détruire, Jonas étend la morale aux générations à venir." },
+      { q: "Que conclut le rapport Meadows en 1972 ?", r: ["Une croissance matérielle indéfinie est impossible dans un monde fini", "Le pétrole est inépuisable", "La population mondiale va diminuer", "Le climat se refroidit"], e: "À l’aide de modèles informatiques, l’équipe du MIT montre que la poursuite des tendances mène à un effondrement au XXIe siècle." }
+    ]
+  },
+
+  {
+    id: "feminisme",
+    nom: "Féminisme",
+    couleur: "#8e44ad",
+    naissance: "Fin du XVIIIe siècle",
+    accroche: "L’égalité entre les femmes et les hommes, en droit et dans les faits.",
+    resume: "Le féminisme est à la fois un ensemble de théories et un mouvement social qui dénonce la domination masculine et réclame l’égalité. On distingue souvent des « vagues » : la conquête des droits civils et politiques, puis la libération du corps et de la vie privée, puis la prise en compte de la diversité des situations des femmes.",
+    idees: [
+      ["Égalité des droits", "Les femmes doivent disposer des mêmes droits civils, politiques et économiques que les hommes."],
+      ["Critique du patriarcat", "La domination masculine est un système social, non un fait de nature."],
+      ["« On ne naît pas femme, on le devient »", "Les rôles féminins et masculins sont construits par l’éducation et la société."],
+      ["Libre disposition de son corps", "Contraception, avortement, lutte contre les violences sexuelles."],
+      ["« Le privé est politique »", "Le partage des tâches, la famille et la sexualité relèvent aussi de rapports de pouvoir."]
+    ],
+    histoire: [
+      [1791, "Déclaration des droits de la femme et de la citoyenne", "Olympe de Gouges réclame pour les femmes les droits que la Révolution réserve aux hommes."],
+      [1792, "Parution de « Défense des droits de la femme »", "Mary Wollstonecraft y revendique l’accès des femmes à l’éducation et à la raison."],
+      [1848, "Convention de Seneca Falls", "Première convention pour les droits des femmes aux États-Unis."],
+      [1893, "La Nouvelle-Zélande accorde le droit de vote aux femmes", "C’est le premier pays à le faire au niveau national."],
+      [1903, "Emmeline Pankhurst fonde l’Union sociale et politique des femmes", "Les « suffragettes » britanniques adoptent des méthodes d’action spectaculaires."],
+      [1944, "Les Françaises obtiennent le droit de vote", "Elles votent pour la première fois en 1945."],
+      [1949, "Parution du « Deuxième Sexe »", "Simone de Beauvoir y analyse la construction sociale de la féminité."],
+      [1975, "Loi Veil en France", "L’interruption volontaire de grossesse est dépénalisée."],
+      [2017, "Mouvement #MeToo", "Une vague mondiale de témoignages dénonce les violences sexuelles."]
+    ],
+    figures: [
+      ["Olympe de Gouges", "1748-1793", "Femme de lettres française, autrice d’une déclaration des droits au féminin, guillotinée sous la Terreur."],
+      ["Mary Wollstonecraft", "1759-1797", "Philosophe anglaise, pionnière de la revendication d’égalité par l’éducation."],
+      ["Hubertine Auclert", "1848-1914", "Militante française du droit de vote, l’une des premières à se dire « féministe »."],
+      ["Emmeline Pankhurst", "1858-1928", "Cheffe de file des suffragettes britanniques."],
+      ["Simone de Beauvoir", "1908-1986", "Philosophe existentialiste française, autrice de l’ouvrage de référence du féminisme du XXe siècle."],
+      ["Betty Friedan", "1921-2006", "Autrice américaine qui a décrit le « malaise sans nom » des femmes au foyer."],
+      ["bell hooks", "1952-2021", "Intellectuelle afro-américaine qui articule sexisme, racisme et rapports de classe."],
+      ["Kimberlé Crenshaw", "née en 1959", "Juriste américaine qui a forgé le concept d’intersectionnalité."],
+      ["Judith Butler", "né·e en 1956", "Philosophe américain·e, théoricien·ne de la performativité du genre."]
+    ],
+    oeuvres: [
+      ["Déclaration des droits de la femme et de la citoyenne", "Olympe de Gouges", 1791],
+      ["Défense des droits de la femme", "Mary Wollstonecraft", 1792],
+      ["Le Deuxième Sexe", "Simone de Beauvoir", 1949],
+      ["La Femme mystifiée", "Betty Friedan", 1963],
+      ["Ne suis-je pas une femme ?", "bell hooks", 1981],
+      ["Trouble dans le genre", "Judith Butler", 1990]
+    ],
+    courants: [
+      ["Féminisme libéral", "Obtenir l’égalité par la loi, l’éducation et l’accès à toutes les professions."],
+      ["Féminisme matérialiste", "Analyse l’exploitation du travail domestique des femmes comme un rapport économique."],
+      ["Féminisme radical", "Le patriarcat est le système d’oppression fondamental, qu’il faut abattre et non aménager."],
+      ["Féminisme intersectionnel", "Les oppressions de genre, de race et de classe se combinent et doivent être pensées ensemble."]
+    ],
+    critiques: [
+      "Ses opposants lui reprochent de nier les différences entre les sexes ou d’attiser un conflit entre eux.",
+      "Le mouvement est traversé de débats internes vifs : universalisme ou intersectionnalité, prostitution, port du voile, place des personnes trans.",
+      "Le féminisme « blanc et bourgeois » a été critiqué pour avoir longtemps ignoré les femmes pauvres et non blanches."
+    ],
+    proches: [],
+    quiz: [
+      { q: "Que signifie la phrase de Simone de Beauvoir « On ne naît pas femme, on le devient » ?", r: ["La féminité est construite par la société et l’éducation", "Les femmes naissent sans droits", "Les femmes doivent mériter leur statut", "La biologie détermine le destin des femmes"], e: "Beauvoir distingue le fait biologique d’être femelle du rôle social assigné aux femmes." },
+      { q: "Que désigne le concept d’intersectionnalité forgé par Kimberlé Crenshaw ?", r: ["Le croisement de plusieurs discriminations, comme le sexisme et le racisme", "L’alliance entre partis de gauche", "L’égalité salariale", "La parité en politique"], e: "Crenshaw montre en 1989 que les femmes noires subissent des discriminations que ni l’antiracisme ni le féminisme seuls ne saisissent." },
+      { q: "Quel était l’objectif principal de la « première vague » féministe ?", r: ["Les droits civils et politiques, notamment le droit de vote", "Le droit à l’avortement", "La reconnaissance des identités de genre", "La semaine de 35 heures"], e: "Du XIXe siècle au début du XXe, les suffragistes et suffragettes se battent d’abord pour l’égalité juridique et le suffrage." },
+      { q: "Que veut dire le slogan « le privé est politique » ?", r: ["La vie domestique et intime est aussi le lieu de rapports de pouvoir", "Les élus n’ont pas droit à une vie privée", "Les entreprises privées doivent être nationalisées", "La politique doit rester une affaire privée"], e: "Les féministes des années 1970 font entrer dans le débat public le travail domestique, la sexualité et les violences conjugales." }
+    ]
+  },
+
+  {
+    id: "libertarianisme",
+    nom: "Libertarianisme",
+    couleur: "#0e9aa7",
+    naissance: "Milieu du XXe siècle",
+    accroche: "Chacun est propriétaire de lui-même ; l’État doit être minimal, voire disparaître.",
+    resume: "Surtout développé aux États-Unis, le libertarianisme pousse la logique libérale à son terme : la liberté individuelle et la propriété sont des droits quasi absolus, et toute contrainte de l’État — impôt compris — doit être justifiée ou abolie. Il est libéral à la fois sur le plan économique et sur les questions de mœurs.",
+    idees: [
+      ["Propriété de soi", "Chaque individu est l’unique propriétaire de son corps, de son travail et de ce qu’il en tire."],
+      ["Principe de non-agression", "Nul ne peut prendre l’initiative de la force contre la personne ou les biens d’autrui."],
+      ["État minimal ou absent", "Au plus, l’État assure police, justice et défense ; pour certains, même cela peut être laissé au marché."],
+      ["Marché libre", "Les échanges volontaires coordonnent la société mieux que toute autorité."],
+      ["Libertés personnelles", "Chacun vit comme il l’entend tant qu’il ne lèse personne : drogues, mœurs, expression."]
+    ],
+    histoire: [
+      [1850, "Parution de « La Loi » de Frédéric Bastiat", "Ce pamphlet contre la « spoliation légale » deviendra une référence des libertariens."],
+      [1949, "Parution de « L’Action humaine »", "Ludwig von Mises y expose l’économie de l’école autrichienne."],
+      [1957, "Parution de « La Grève » (Atlas Shrugged)", "Le roman d’Ayn Rand exalte l’individu créateur face à l’État."],
+      [1971, "Fondation du Parti libertarien aux États-Unis", "Il devient le troisième parti du pays par le nombre de voix, loin derrière les deux grands."],
+      [1974, "Parution de « Anarchie, État et utopie »", "Robert Nozick y défend l’État minimal contre la justice redistributive de Rawls."],
+      [1977, "Fondation du Cato Institute", "Ce cercle de réflexion diffuse les idées libertariennes à Washington."],
+      [2023, "Javier Milei est élu président de l’Argentine", "Il se revendique « anarcho-capitaliste »."]
+    ],
+    figures: [
+      ["Frédéric Bastiat", "1801-1850", "Économiste et pamphlétaire français, précurseur revendiqué, auteur de la « pétition des marchands de chandelles »."],
+      ["Ludwig von Mises", "1881-1973", "Économiste autrichien, chef de file de l’école autrichienne et critique du calcul économique socialiste."],
+      ["Ayn Rand", "1905-1982", "Romancière américaine née en Russie, fondatrice de l’objectivisme et apôtre de l’« égoïsme rationnel »."],
+      ["Murray Rothbard", "1926-1995", "Économiste américain, théoricien de l’anarcho-capitalisme."],
+      ["Robert Nozick", "1938-2002", "Philosophe de Harvard, défenseur de l’État minimal."],
+      ["David Friedman", "né en 1945", "Économiste américain qui défend une société sans État par des arguments d’efficacité."]
+    ],
+    oeuvres: [
+      ["La Loi", "Frédéric Bastiat", 1850],
+      ["L’Action humaine", "Ludwig von Mises", 1949],
+      ["La Grève", "Ayn Rand", 1957],
+      ["Vers une société sans État", "David Friedman", 1973],
+      ["Anarchie, État et utopie", "Robert Nozick", 1974],
+      ["L’Éthique de la liberté", "Murray Rothbard", 1982]
+    ],
+    courants: [
+      ["Minarchisme", "L’État doit se limiter à la police, à la justice et à la défense."],
+      ["Anarcho-capitalisme", "Toutes les fonctions de l’État, y compris la sécurité, peuvent être assurées par le marché."],
+      ["Objectivisme", "Philosophie d’Ayn Rand fondée sur la raison et l’intérêt personnel."],
+      ["Libertarianisme de gauche", "Associe propriété de soi et partage égalitaire des ressources naturelles."]
+    ],
+    critiques: [
+      "Ses adversaires estiment qu’un État minimal laisserait sans protection les plus faibles et sans réponse les problèmes collectifs (pollution, santé publique).",
+      "Considérer l’impôt comme un vol reviendrait à ignorer ce que chacun doit à la société qui rend sa prospérité possible.",
+      "La liberté de contracter serait illusoire quand les parties sont en situation très inégale."
+    ],
+    proches: ["liberalisme", "anarchisme"],
+    quiz: [
+      { q: "Qu’énonce le principe de non-agression ?", r: ["Nul ne peut initier la force contre la personne ou les biens d’autrui", "Aucun pays ne doit posséder d’armée", "Les grèves sont interdites", "L’État a le monopole de la violence légitime"], e: "C’est l’axiome central du libertarianisme : seule la légitime défense justifie l’usage de la force." },
+      { q: "Quelle est la différence entre minarchisme et anarcho-capitalisme ?", r: ["Le premier garde un État limité à la sécurité et à la justice, le second supprime l’État", "Le premier est de gauche, le second de droite", "Le premier refuse la propriété privée", "Il n’y en a aucune"], e: "Nozick est minarchiste ; Rothbard et David Friedman sont anarcho-capitalistes." },
+      { q: "À quel philosophe Robert Nozick répond-il dans « Anarchie, État et utopie » ?", r: ["John Rawls", "Karl Marx", "Edmund Burke", "Jean-Jacques Rousseau"], e: "Contre la redistribution défendue par Rawls, Nozick soutient que seule compte la justice des acquisitions et des échanges." },
+      { q: "En quoi le libertarianisme se distingue-t-il du conservatisme ?", r: ["Il défend aussi la liberté individuelle en matière de mœurs", "Il veut augmenter les impôts", "Il défend la religion d’État", "Il rejette la propriété privée"], e: "Les libertariens s’opposent à l’État aussi bien quand il régule l’économie que quand il régule la vie privée." }
+    ]
+  },
+
+  {
+    id: "democratie-chretienne",
+    nom: "Démocratie chrétienne",
+    couleur: "#3b9ed8",
+    naissance: "Fin du XIXe siècle",
+    accroche: "La dignité de la personne, entre individualisme libéral et collectivisme.",
+    resume: "La démocratie chrétienne naît de la doctrine sociale de l’Église catholique face à la question ouvrière. Elle cherche une voie entre libéralisme et socialisme : économie de marché tempérée par la solidarité, rôle central de la famille et des corps intermédiaires. Après 1945, elle domine la vie politique en Allemagne et en Italie et porte la construction européenne.",
+    idees: [
+      ["Dignité de la personne", "L’être humain n’est ni un individu isolé ni un rouage de la collectivité : c’est une personne, qui s’épanouit en relation avec les autres."],
+      ["Subsidiarité", "Une autorité supérieure ne doit pas faire ce qu’un échelon plus proche des gens peut accomplir lui-même."],
+      ["Solidarité et bien commun", "La société doit protéger les plus faibles ; la propriété a une fonction sociale."],
+      ["Économie sociale de marché", "Liberté d’entreprendre et concurrence, corrigées par la protection sociale."],
+      ["Construction européenne", "La réconciliation et l’union des nations d’Europe garantissent la paix."]
+    ],
+    histoire: [
+      [1891, "Encyclique « Rerum novarum »", "Le pape Léon XIII dénonce la misère ouvrière et défend salaire juste et syndicats, tout en rejetant le socialisme."],
+      [1919, "Luigi Sturzo fonde le Parti populaire italien", "Premier grand parti démocrate-chrétien de masse."],
+      [1931, "Encyclique « Quadragesimo anno »", "Pie XI y formule le principe de subsidiarité."],
+      [1936, "Parution d’« Humanisme intégral »", "Jacques Maritain y réconcilie foi chrétienne, démocratie et pluralisme."],
+      [1944, "Fondation du MRP en France", "Issu de la Résistance, il est l’un des trois grands partis de la IVe République à ses débuts."],
+      [1949, "Konrad Adenauer devient chancelier", "La CDU dirige l’Allemagne fédérale jusqu’en 1969 et met en œuvre l’économie sociale de marché."],
+      [1950, "Déclaration Schuman", "Elle propose de mettre en commun le charbon et l’acier français et allemands : c’est l’acte de naissance de l’Europe communautaire."],
+      [1976, "Fondation du Parti populaire européen", "Il rassemble les partis démocrates-chrétiens du continent."]
+    ],
+    figures: [
+      ["Léon XIII", "1810-1903", "Pape de 1878 à 1903, initiateur de la doctrine sociale de l’Église."],
+      ["Luigi Sturzo", "1871-1959", "Prêtre sicilien, fondateur du premier parti de masse d’inspiration chrétienne en Italie, exilé sous Mussolini."],
+      ["Konrad Adenauer", "1876-1967", "Premier chancelier de l’Allemagne fédérale, artisan de l’ancrage à l’Ouest et de la réconciliation franco-allemande."],
+      ["Alcide De Gasperi", "1881-1954", "Président du Conseil italien de 1945 à 1953, l’un des « pères de l’Europe »."],
+      ["Jacques Maritain", "1882-1973", "Philosophe thomiste français, inspirateur de la Déclaration universelle des droits de l’homme."],
+      ["Robert Schuman", "1886-1963", "Ministre français des Affaires étrangères, auteur de la déclaration du 9 mai 1950."],
+      ["Emmanuel Mounier", "1905-1950", "Philosophe français, fondateur de la revue « Esprit » et du personnalisme."],
+      ["Angela Merkel", "née en 1954", "Chancelière allemande de 2005 à 2021, issue de la CDU."]
+    ],
+    oeuvres: [
+      ["Rerum novarum", "Léon XIII", 1891],
+      ["Humanisme intégral", "Jacques Maritain", 1936],
+      ["Manifeste au service du personnalisme", "Emmanuel Mounier", 1936],
+      ["Christianisme et démocratie", "Jacques Maritain", 1943]
+    ],
+    courants: [
+      ["Catholicisme social", "Mouvement du XIXe siècle qui veut répondre chrétiennement à la question ouvrière."],
+      ["Personnalisme", "Philosophie de Mounier et Maritain : la personne, ni individu atomisé ni élément de la masse."],
+      ["Christianisme social protestant", "Équivalent protestant, influent en Allemagne, aux Pays-Bas et en Scandinavie."],
+      ["Aile sociale et aile conservatrice", "Les partis démocrates-chrétiens réunissent des syndicalistes chrétiens comme des conservateurs."]
+    ],
+    critiques: [
+      "Les défenseurs d’une laïcité stricte contestent qu’une référence religieuse inspire un programme politique.",
+      "À gauche, on lui reproche son conservatisme sur les questions de famille et de mœurs.",
+      "Avec la sécularisation, ces partis sont accusés d’avoir perdu leur identité pour devenir de simples partis de centre droit."
+    ],
+    proches: ["conservatisme", "liberalisme", "social-democratie"],
+    quiz: [
+      { q: "Que signifie le principe de subsidiarité ?", r: ["Une décision doit être prise à l’échelon le plus proche possible des personnes concernées", "L’État doit subventionner toutes les entreprises", "L’Église doit diriger l’État", "Les riches doivent aider les pauvres par la charité"], e: "Formulé en 1931, ce principe figure aujourd’hui dans les traités de l’Union européenne." },
+      { q: "Quelle encyclique de 1891 fonde la doctrine sociale de l’Église ?", r: ["Rerum novarum", "Laudato si’", "Humanae vitae", "Quanta cura"], e: "Léon XIII y traite « des choses nouvelles » : la condition ouvrière née de l’industrialisation." },
+      { q: "Que propose la déclaration Schuman du 9 mai 1950 ?", r: ["Mettre en commun le charbon et l’acier de la France et de l’Allemagne", "Créer une monnaie unique", "Fonder l’OTAN", "Supprimer les frontières en Europe"], e: "Elle débouche en 1951 sur la Communauté européenne du charbon et de l’acier (CECA)." },
+      { q: "Qu’est-ce que l’« économie sociale de marché » ?", r: ["Un marché concurrentiel accompagné d’une forte protection sociale", "Une économie entièrement planifiée", "Un marché sans aucune règle", "Une économie fondée sur le troc"], e: "Mise en œuvre en Allemagne de l’Ouest après 1948, elle combine concurrence, monnaie stable et État social." }
+    ]
+  }
+];

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SocioPolix — Comprendre les idéologies politiques</title>
+  <meta name="description" content="Un atlas des idéologies politiques : idées, histoire, figures marquantes, et des quiz pour apprendre.">
+  <meta name="theme-color" content="#f6f2ea">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SocioPolix">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    try {
+      var t = localStorage.getItem("sp-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#app">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="#/" aria-label="SocioPolix, accueil">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        SocioPolix
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#/" data-nav="home"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg>Idéologies</a>
+        <a href="#/frise" data-nav="frise"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v18"/><circle cx="7" cy="7" r="2" fill="currentColor"/><circle cx="7" cy="16" r="2" fill="currentColor"/><path d="M12 7h8M12 16h6"/></svg>Frise</a>
+        <a href="#/quiz" data-nav="quiz"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8"/><path d="M12 17h.01"/></svg>Quiz</a>
+      </nav>
+      <button id="theme" class="icon-btn" type="button" aria-label="Changer de thème clair ou sombre" title="Thème clair / sombre">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 0 18V3z"/><circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" class="wrap" tabindex="-1">
+    <noscript><p>Ce site a besoin de JavaScript pour afficher son contenu.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>SocioPolix présente chaque idéologie de façon descriptive, avec ses idées comme ses critiques. Expliquer une doctrine n’est pas la défendre.</p>
+      <p class="muted">Contenu de vulgarisation : pour approfondir, reportez-vous aux œuvres citées dans chaque fiche.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
